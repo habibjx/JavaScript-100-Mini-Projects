@@ -1,0 +1,109 @@
+/* google fonts  */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background: #FCE9F1;
+    color: #2B2730;
+    font-family: "Playfair Display", serif;
+}
+nav{
+    text-align: center;
+    margin: 50px 0;
+}
+nav i{
+    font-size: 40px;
+    cursor: pointer;
+    transition: .3s ease;
+    color: #2B2730;
+}
+nav i:hover{
+    transform: scale(1.1);
+}
+header{
+    padding-top: 10vh;
+}
+header .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    position: relative;
+}
+header .cyrcle{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+
+    display: grid;
+    place-content: center;
+    transition: .3s ease;
+}
+header .cyrcle i{
+    font-size: 60px;
+    cursor: pointer;
+    position: relative;
+}
+header .cyrcle.display{
+    width: 200px;
+    height: 200px;
+    font-size: 60px;
+    font-weight: 700;
+}
+header .cyrcle.decrease:hover{
+    background-color: #FC6464;
+}
+header .cyrcle.increase:hover{
+    background-color: #89ED95;
+}
+header .reset{
+    position: absolute;
+    left: 50%;
+    top: 120%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    font-size: 20px;
+    transition: .3s ease;
+}
+header .reset:hover{
+    background: #ec3d3d;
+    color: white;
+}
+header .reset.disable{
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+@media screen and (max-width: 500px){ 
+    header {
+        padding-top: 5vh;
+    }
+    header .container{
+        display: grid;
+        place-content: center;
+    }
+    header .cyrcle.increase,
+    header .cyrcle.decrease{
+        position: absolute;
+        bottom: -100px;
+    }
+    header .cyrcle.decrease{
+        left: 10%;
+    }
+    header .cyrcle.increase{
+        right: 10%;
+    }
+    header .reset{
+        top: 150%;
+    }
+}
