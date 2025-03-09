@@ -50,7 +50,6 @@ header .cyrcle{
 }
 header .cyrcle i{
     font-size: 60px;
-    cursor: pointer;
     position: relative;
 }
 header .cyrcle.display{
@@ -58,6 +57,10 @@ header .cyrcle.display{
     height: 200px;
     font-size: 60px;
     font-weight: 700;
+}
+header .cyrcle.decrease,
+header .cyrcle.increase{
+    cursor: pointer;
 }
 header .cyrcle.decrease:hover{
     background-color: #FC6464;
