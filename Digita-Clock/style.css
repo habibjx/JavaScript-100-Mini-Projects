@@ -28,12 +28,6 @@ body{
     font-family: "Roboto", sans-serif;
 }
 
-.switch{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
 .switch-body label{
     width: 200px;
     height: 60px;
@@ -74,9 +68,6 @@ body{
 .switch-body input:checked ~ label::before{
     left: 142px;
 }
-.switch p{
-    display: none;
-}
 .time-display{
     display: flex;
     justify-content: center;
@@ -93,6 +84,11 @@ body{
 
     display: grid;
     place-content: center;
+}
+.time-display span{
+    font-size: 60px;
+    color: white;
+    display: none;
 }
 .time-display .times p{
     font-family: "Digital-Number", sans-serif;
@@ -117,9 +113,6 @@ body{
     .container{
         width: 90%;
     }
-    .switch{
-        justify-content: space-between;
-    }
     .time-display{
         width: 100%;
         gap: 20px; 
@@ -133,18 +126,17 @@ body{
         height: auto;
         box-shadow: none;
     }
+    .time-display span{
+        display: block;
+    }
     .time-display .times p{
         font-size: 70px;
     }
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 700px){
     .switch-body label span{
         font-size: 20px;
-    }
-    .switch p{
-        display: block;
-        font-size: 30px;
     }
     .switch-body label{
         width: 100px;
@@ -157,16 +149,25 @@ body{
     .switch-body input:checked ~ label::before{
         left: 68px;
     }
-    .time-display .time-mood{
-        display: none;
-    }
     .time-display .times p{
-        font-size: 50px;
+        font-size: 40px;
     }
     .date{
         gap: 10px;
     }
     .date .times-date{
         font-size: 25px;
+    }
+}
+@media only screen and (max-width: 460px){
+    .time-display .times p{
+        font-size: 30px;
+    }
+    .time-display{
+        gap: 10px;
+    }
+    .time-display span{
+        display: block;
+        font-size: 20px;
     }
 }

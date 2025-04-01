@@ -1,4 +1,8 @@
-
+/**
+ * Date: 01:04:2025.
+ * description: This JavaScript-powered digital clock updates every second, supports both 12-hour and 24-hour formats, and displays the current date.
+ * Author: M H R Habib.
+ */
 //Global Variable
 let timeSessionHalf = true;
 
@@ -10,9 +14,6 @@ window.onload = () =>{
 function main(){
     //DOM Reference
     const switchbtn = document.getElementById('switch');
-    
-    
-   
 
     //Event listener
     switchbtn.addEventListener('click', () => {
@@ -47,19 +48,13 @@ function timeUpdate(){
     }
     document.getElementById('minutes').textContent = minutes;
     document.getElementById('seconds').textContent = seconds;
-
-
-
     document.getElementById('days').textContent =  days[day];
     document.getElementById('months').textContent = months[month];
     document.getElementById('years').textContent = year;
-    // const days = document.getElementById('days');
-    // const months = document.getElementById('months');
-    // const years = document.getElementById('years');
-    
-
 }
-setInterval(timeUpdate, 1000)
+setInterval(timeUpdate, 1000);
+
+
 //Unities function
 
 function getTimeAndDate(){

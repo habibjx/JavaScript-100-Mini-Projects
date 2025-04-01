@@ -4,14 +4,23 @@ This repository contains a collection of 100 mini JavaScript projects. These pro
 
 ## Projects List
 
-1. **Counter App**  
+### 1. Counter App
    - **Description**: A simple counter app where you can increment and decrement a counter with buttons.  
    - **Repo**: [Counter App](https://github.com/habibjx/JavaScript-100-Mini-Projects/tree/main/Counter-App)
 
-## How to Run the Projects
+### 2. Digital Clock
 
-To run any project:
+   ![Digital Clock Preview](./Digita-Clock/img/digital-clock.png) 
 
-1. Clone the repository to your local machine:
-   ```bash
-   git clone https://github.com/habibjx/JavaScript-100-Mini-Projects.git
+  - **Description**: This real-time digital clock is built using JavaScript and updates every second. It supports both **12-hour** and **24-hour** formats, allowing users to switch between them. The clock also displays the **current date** for a complete time-tracking experience.
+  - **Repo**: [Digital Clock](https://github.com/habibjx/JavaScript-100-Mini-Projects/tree/main/Digita-Clock)
+  - **Live View**: [Digital Clock](https://github.com/habibjx/JavaScript-100-Mini-Projects/tree/main/Digita-Clock)
+
+**Features**  
+- ⏳ **Real-time updates** – Refreshes every second.  
+- 🕒 **12-hour & 24-hour mode** – Switch between AM/PM and 24-hour format.  
+- 📅 **Date display** – Shows the current date.  
+- 🎨 **User-friendly design** – Simple and clean interface.  
+
+This project is a great way to practice **JavaScript's Date object**, **DOM manipulation**, and **real-time updates**. 🚀  
+
