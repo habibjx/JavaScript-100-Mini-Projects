@@ -10,7 +10,6 @@
     font-style: normal;
 }
 :root{
-    /* color  */
     --color-bg-pri: #445869;
     --color-bg-sec: #D2F1FF;
 }
@@ -37,9 +36,9 @@ body{
     border-radius: 50px;
     position: relative;
     cursor: pointer;
+    transition: left 0.3s ease, right 0.3s ease;
 }
-.switch-body label::before{
-    content: '';
+.switch-circle{
     position: absolute;
     width: 55px;
     height: 55px;
@@ -49,7 +48,6 @@ body{
     left: 2px;
     transform: translateY(-50%);
     border-radius: 50%;
-    transition: .3s ease;
 }
 .switch-body label span{
     position: absolute;
@@ -61,12 +59,6 @@ body{
     font-weight: 600;
     user-select: none;
     color:#30414A;
-}
-.switch-body input{
-    display: none;
-}
-.switch-body input:checked ~ label::before{
-    left: 142px;
 }
 .time-display{
     display: flex;
@@ -137,17 +129,6 @@ body{
 @media only screen and (max-width: 700px){
     .switch-body label span{
         font-size: 20px;
-    }
-    .switch-body label{
-        width: 100px;
-        height: 30px;
-    }
-    .switch-body label::before{
-        width: 28px;
-        height: 28px;
-    }
-    .switch-body input:checked ~ label::before{
-        left: 68px;
     }
     .time-display .times p{
         font-size: 40px;

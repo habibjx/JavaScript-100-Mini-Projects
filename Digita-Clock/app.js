@@ -4,8 +4,9 @@
  * Author: M H R Habib.
  */
 //Global Variable
-let timeSessionHalf = true;
 
+// let timeSessionHalf = JSON.parse(localStorage.getItem('sessionTime')) || true;
+let timeSessionHalf = JSON.parse(localStorage.getItem('sessionTime') ?? 'true');
 
 window.onload = () =>{
     main()
@@ -13,21 +14,19 @@ window.onload = () =>{
 
 function main(){
     //DOM Reference
-    const switchbtn = document.getElementById('switch');
+    const switchButton = document.getElementById('switch');
 
     //Event listener
-    switchbtn.addEventListener('click', () => {
-        timeSessionHalf = !timeSessionHalf;
-        timeUpdate();
-    })
+    switchButton.addEventListener('click', () => handleSwitchButton());
 
     setInterval(timeUpdate, 1000);
 }
 
-//Event handler
-
-//DOM function
+//DOM function ====================================
 function timeUpdate(){
+    localStorage.setItem('sessionTime', JSON.stringify(timeSessionHalf)); 
+    switchOnOff()
+
     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const months = [
         "January", "February", "March", "April", "May", "June", 
@@ -42,7 +41,6 @@ function timeUpdate(){
         document.getElementById('timeMood').textContent = '12H';
     }else{
         document.getElementById('hours').textContent = hours;
-        console.log(hours)
         document.querySelector('.time-mood').style.display = 'none';
         document.getElementById('timeMood').textContent = '24H';
     }
@@ -53,9 +51,12 @@ function timeUpdate(){
     document.getElementById('years').textContent = year;
 }
 
+function handleSwitchButton(){
+    timeSessionHalf = !timeSessionHalf;
+    timeUpdate();
+}
 
-
-//Unities function
+//Unities function ===================================
 
 function getTimeAndDate(){
     const time = new Date();
@@ -83,4 +84,11 @@ function halfSessionTime(){
     }
     return {hour, session};
 }
-
+function switchOnOff(){
+    const switchCircle = document.querySelector('.switch-circle'); 
+    if(timeSessionHalf){
+        switchCircle.style.left = 'calc(100% - 57px)';
+    }else {
+        switchCircle.style.left = '2px';
+    }
+}
