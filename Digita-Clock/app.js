@@ -63,7 +63,6 @@ function timeUpdate(){
 
 function handleSwitchButton(){
     timeSessionHalf = !timeSessionHalf;
-    timeDivider.classList.toggle('colon-dot');
     timeUpdate();
 }
 
@@ -100,7 +99,13 @@ function switchOnOff(){
     const switchCircle = document.querySelector('.switch-circle'); 
     if(timeSessionHalf){
         switchCircle.style.left = 'calc(100% - 57px)';
+        if(timeDivider.classList.contains('colon-dot')){
+            timeDivider.classList.remove('colon-dot');
+        }
     }else {
         switchCircle.style.left = '2px';
+        if(!timeDivider.classList.contains('colon-dot')){
+            timeDivider.classList.add('colon-dot');
+        }
     }
 }
