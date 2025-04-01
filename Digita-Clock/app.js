@@ -19,10 +19,7 @@ const timeMood2 = document.getElementById('timeMood');
 const timeDivider = document.getElementById('timeDivider');
 
 const dayList = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-const monthList = [
-    "January", "February", "March", "April", "May", "June", 
-    "July", "August", "September", "October", "November", "December"
-];
+const monthList = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 
 window.onload = () =>{
@@ -66,6 +63,7 @@ function timeUpdate(){
 
 function handleSwitchButton(){
     timeSessionHalf = !timeSessionHalf;
+    timeDivider.classList.toggle('colon-dot');
     timeUpdate();
 }
 
