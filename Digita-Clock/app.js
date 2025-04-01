@@ -21,7 +21,7 @@ function main(){
         timeUpdate();
     })
 
-    timeUpdate();
+    setInterval(timeUpdate, 1000);
 }
 
 //Event handler
@@ -52,7 +52,7 @@ function timeUpdate(){
     document.getElementById('months').textContent = months[month];
     document.getElementById('years').textContent = year;
 }
-setInterval(timeUpdate, 1000);
+
 
 
 //Unities function
