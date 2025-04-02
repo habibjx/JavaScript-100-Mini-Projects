@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --color-bg: #CCCCE0;
+    --color-section-bg: #DDE7F4;
+    --color-navy-blue: #001247;
+    --color-light-cyan: #bfcfff;
+    --color-light-blue: #809fff;
+    --color-placeholder: #7A7A9B;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-navy-blue);
+    background: var(--color-bg);
+}
+
+
