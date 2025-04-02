@@ -22,6 +22,8 @@ function main(){
 
     nodeListsParent.addEventListener('click', (event) => nodeListsParentHandle(event));
 
+    userInput.addEventListener('keydown', (event) => {if(event.key === 'Enter') addNodeButton.click()});
+
 }
 
 // Event Handler ==========
@@ -51,7 +53,7 @@ function nodeListUpdate(element, node){
     deleteBox.innerHTML = `<i class="fa-solid fa-trash-can"></i>`;
 
     list.append(checkMark, p, deleteBox);
-    element.appendChild(list);
+    element.prepend(list);
 }
 
 function nodeListsParentHandle(event){
