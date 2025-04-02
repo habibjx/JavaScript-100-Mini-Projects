@@ -17,11 +17,11 @@ function main(){
     const addNodeButton = document.getElementById('addNodeButton');
     const nodeListsParent = document.getElementById('nodeListsParent');
 
-
     // Event Listener ===========
     addNodeButton.addEventListener('click', () => addNodeButtonHandle(userInput, nodeListsParent));
 
     nodeListsParent.addEventListener('click', (event) => nodeListsParentHandle(event));
+
 }
 
 // Event Handler ==========
@@ -48,9 +48,8 @@ function nodeListUpdate(element, node){
     checkMark.classList.add('check-mark');
     p.innerText = node;
     deleteBox.classList.add('delete-box');
-    i.classList.add('fa-solid', 'fa-trash-can');
+    deleteBox.innerHTML = `<i class="fa-solid fa-trash-can"></i>`;
 
-    deleteBox.appendChild(i);
     list.append(checkMark, p, deleteBox);
     element.appendChild(list);
 }
@@ -59,10 +58,11 @@ function nodeListsParentHandle(event){
     const deleteButton = event.target.closest('.delete-box');
     if(deleteButton){
         const parent = deleteButton.parentElement
-        if(parent){
-            parent.remove();
-        }
+        if(parent) parent.remove();
     }
+    
+    const mark = event.target.closest('.check-mark');
+    if (mark) mark.innerHTML = mark.innerHTML.trim() === "" ? `<i class="fa-solid fa-check"></i>` : "";
 }
 
 
