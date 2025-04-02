@@ -16,21 +16,19 @@
     --color-light-blue: #809fff;
     --color-placeholder: #7A7A9B;
 }
+html, body {
+    height: 100dvh;
+    margin: 0;
+    overflow: hidden;
+}
 body{
     width: 100%;
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--color-navy-blue);
     background: var(--color-bg);
     font-family: "Roboto", sans-serif;
-}
-.wrapper{
-    /* background: var(--color-section-bg); */
-    /* border-radius: 16px; */
-    /* padding: 28px; */
-    border: 1px solid red;
 }
 .wrapper h1{
     width: fit-content;
@@ -51,9 +49,11 @@ body{
 }
 .container{
     width: 556px;
+    max-height: 85vh;
     background: var(--color-section-bg);
     border-radius: 1rem;
     padding: 28px;
+    overflow: auto;
 }
 .header-input-box{
     position: relative;
@@ -61,6 +61,8 @@ body{
 }
 .header-input-box:hover button{
     right: 4px;
+    opacity: 1;
+    visibility: visible;
 }
 .container input{
     width: 100%;
@@ -90,9 +92,83 @@ body{
     font-size: 16px;
     font-weight: 500;
     transition: .3s ease;
+    opacity: 0;
+    visibility: hidden;
 }
 .container h3{
     font-size: 20px;
     margin: 30px 0 20px 0;
     border-bottom: 1px solid var(--color-navy-blue);
+}
+.container .lists{
+    /* border: 1px solid red; */
+}
+.lists .list{
+    width: 100%;
+    min-height: 45px;
+    margin-bottom: 10px;
+    border: 1px solid  var(--color-light-cyan);
+    border-radius: 8px;
+    background: var(--color-bg);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+}
+.lists .list:hover .delete-box{
+    right: 8px;
+    opacity: 1;
+    visibility: visible;
+}
+.lists .list p{
+    width: 100%;
+    margin: 0 5px 0 46px;
+    padding-block: 5px;
+}
+.list .check-mark{
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    left: 8px;
+    transform: translateY(-50%);
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid var(--color-light-blue);
+    background: var(--color-light-cyan);
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+}
+.list .delete-box{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--color-light-blue);
+    position: absolute;
+    top: 50%;
+    right: -38px;
+    transform: translateY(-50%);
+   
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+    transition: .3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+.list .delete-box i{
+    color: var(--color-navy-blue);
+}
+@media only screen and (max-width: 576px){
+    .wrapper{
+        width: 90%;
+    }
+    .wrapper h1 {
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+    .container {
+        width: 100%;
+        padding: 20px;
+    }
 }
