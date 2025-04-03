@@ -6,9 +6,9 @@
 
 // Global Variables
 const welcomeText = [
-    { id: 1, text: 'Your day, your plan! Start adding tasks now.' },
-    { id: 2, text: 'Add your first task and stay productive!' },
-    { id: 3, text: 'Welcome! Let’s organize your tasks today.' }
+    { id: 1, isMark: false, text: 'Your day, your plan! Start adding tasks now.' },
+    { id: 2, isMark: false, text: 'Add your first task and stay productive!' },
+    { id: 3, isMark: false, text: 'Welcome! Let’s organize your tasks today.' }
 ];
 
 let nodeList = JSON.parse(localStorage.getItem('userData')) || welcomeText;
@@ -55,8 +55,21 @@ function handleNodeListsParent(event){
     }
     
     const mark = event.target.closest('.check-mark');
-    if (mark) mark.innerHTML = mark.innerHTML.trim() === "" ? `<i class="fa-solid fa-check"></i>` : "";
+    if (mark){
+        const id = mark.parentElement.getAttribute('data-time');
+        let isMark = true;
+        if(mark.innerHTML.trim() === ""){
+            mark.innerHTML = `<i class="fa-solid fa-check"></i>`;
+            isMark = true;
+        }
+        else{
+            mark.innerHTML = "";
+            isMark = false;
+        }
+        updateCheckMark(id, isMark)
+    }
 }
+
 
 
 // DOM function ==============================
@@ -66,7 +79,6 @@ function nodeListUpdate(node){
     const checkMark = document.createElement('div');
     const p = document.createElement('p');
     const deleteBox = document.createElement('div');
-    const i = document.createElement('i');
 
     list.classList.add('list')
     checkMark.classList.add('check-mark');
@@ -79,25 +91,30 @@ function nodeListUpdate(node){
     list.append(checkMark, p, deleteBox);
     nodeListsParent.prepend(list);
 
-    nodeList.push({id: uniqueTimeId, text: node});
-    localStorage.setItem('userData', JSON.stringify(nodeList));
+    nodeList.push({id: uniqueTimeId, isMark: false, text: node});
+    saveData();
 }
-function nodeListReUpdate(id, node){
+function nodeListReUpdate(id, isMark, node){
     const list = document.createElement('div');
     const checkMark = document.createElement('div');
     const p = document.createElement('p');
     const deleteBox = document.createElement('div');
-    const i = document.createElement('i');
 
     list.classList.add('list')
     checkMark.classList.add('check-mark');
+    if(isMark){
+        checkMark.innerHTML = `<i class="fa-solid fa-check"></i>`;
+    }
+    else{
+        checkMark.innerHTML = "";
+    }
     p.innerText = node;
     deleteBox.classList.add('delete-box');
     deleteBox.innerHTML = `<i class="fa-solid fa-trash-can"></i>`;
 
     list.setAttribute('data-time', id);
     list.append(checkMark, p, deleteBox);
-    nodeListsParent.prepend(list);
+    nodeListsParent.prepend(list);  
 }
 
 
@@ -109,13 +126,26 @@ function findNodeById(id) {
     if(index !== -1){
         nodeList.splice(index,1);
     }
-    localStorage.setItem('userData', JSON.stringify(nodeList));
+    saveData();
 }
 
 function autoUpdateNode(){
     console.log(nodeList)
     nodeListsParent.innerHTML = '';
     for(let node of nodeList){
-        nodeListReUpdate(node.id, node.text)
+        nodeListReUpdate(node.id, node.isMark, node.text)
+    }
+}
+
+function saveData(){
+    localStorage.setItem('userData', JSON.stringify(nodeList));
+}
+
+function updateCheckMark(id, isMark){
+    for(let obj of nodeList){
+        if(obj.id === Number(id)){
+            obj.isMark = isMark;
+            saveData();
+        }         
     }
 }
