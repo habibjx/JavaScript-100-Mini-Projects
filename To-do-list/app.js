@@ -5,9 +5,19 @@
  */
 
 // Global Variables
+const welcomeText = [
+    { id: 1, text: 'Your day, your plan! Start adding tasks now.' },
+    { id: 2, text: 'Add your first task and stay productive!' },
+    { id: 3, text: 'Welcome! Let’s organize your tasks today.' }
+];
+
+let nodeList = JSON.parse(localStorage.getItem('userData')) || welcomeText;
+
+const nodeListsParent = document.getElementById('nodeListsParent');
 
 window.onload = () => {
     main()
+    
 
 }
 
@@ -15,31 +25,43 @@ function main(){
     // DOM References =========
     const userInput = document.getElementById('userInput');
     const addNodeButton = document.getElementById('addNodeButton');
-    const nodeListsParent = document.getElementById('nodeListsParent');
+    
 
     // Event Listener ===========
-    addNodeButton.addEventListener('click', () => addNodeButtonHandle(userInput, nodeListsParent));
-
-    nodeListsParent.addEventListener('click', (event) => nodeListsParentHandle(event));
+    addNodeButton.addEventListener('click', () => handleAddNodeButton(userInput));
+    nodeListsParent.addEventListener('click', (event) => handleNodeListsParent(event));
 
     userInput.addEventListener('keydown', (event) => {if(event.key === 'Enter') addNodeButton.click()});
 
+    autoUpdateNode();
 }
 
 // Event Handler ==========
-function addNodeButtonHandle(userInput, nodeListsParent){
+function handleAddNodeButton(userInput){
     const node = userInput.value;
     if(node === ''){
         alert('Please Enter Node');
         return;
     }
-    nodeListUpdate(nodeListsParent, node)
+    nodeListUpdate(node);
     userInput.value = '';
 }
+function handleNodeListsParent(event){
+    const deleteButton = event.target.closest('.delete-box');
+    if(deleteButton){
+        const id = deleteButton.parentElement.getAttribute('data-time');
+        findNodeById(id)
+        deleteButton.parentElement.remove();
+    }
+    
+    const mark = event.target.closest('.check-mark');
+    if (mark) mark.innerHTML = mark.innerHTML.trim() === "" ? `<i class="fa-solid fa-check"></i>` : "";
+}
+
 
 // DOM function ==============================
 
-function nodeListUpdate(element, node){
+function nodeListUpdate(node){
     const list = document.createElement('div');
     const checkMark = document.createElement('div');
     const p = document.createElement('p');
@@ -52,20 +74,48 @@ function nodeListUpdate(element, node){
     deleteBox.classList.add('delete-box');
     deleteBox.innerHTML = `<i class="fa-solid fa-trash-can"></i>`;
 
+    const uniqueTimeId = Date.now() * Math.ceil(Math.random() * 10);
+    list.setAttribute('data-time', uniqueTimeId);
     list.append(checkMark, p, deleteBox);
-    element.prepend(list);
-}
+    nodeListsParent.prepend(list);
 
-function nodeListsParentHandle(event){
-    const deleteButton = event.target.closest('.delete-box');
-    if(deleteButton){
-        const parent = deleteButton.parentElement
-        if(parent) parent.remove();
-    }
-    
-    const mark = event.target.closest('.check-mark');
-    if (mark) mark.innerHTML = mark.innerHTML.trim() === "" ? `<i class="fa-solid fa-check"></i>` : "";
+    nodeList.push({id: uniqueTimeId, text: node});
+    localStorage.setItem('userData', JSON.stringify(nodeList));
+}
+function nodeListReUpdate(id, node){
+    const list = document.createElement('div');
+    const checkMark = document.createElement('div');
+    const p = document.createElement('p');
+    const deleteBox = document.createElement('div');
+    const i = document.createElement('i');
+
+    list.classList.add('list')
+    checkMark.classList.add('check-mark');
+    p.innerText = node;
+    deleteBox.classList.add('delete-box');
+    deleteBox.innerHTML = `<i class="fa-solid fa-trash-can"></i>`;
+
+    list.setAttribute('data-time', id);
+    list.append(checkMark, p, deleteBox);
+    nodeListsParent.prepend(list);
 }
 
 
 //Utilities Function ========================
+function findNodeById(id) {
+    const index = nodeList.findIndex( obj => {
+        return obj.id === Number(id);
+    });
+    if(index !== -1){
+        nodeList.splice(index,1);
+    }
+    localStorage.setItem('userData', JSON.stringify(nodeList));
+}
+
+function autoUpdateNode(){
+    console.log(nodeList)
+    nodeListsParent.innerHTML = '';
+    for(let node of nodeList){
+        nodeListReUpdate(node.id, node.text)
+    }
+}
