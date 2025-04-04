@@ -28,3 +28,25 @@ This repository contains a collection of 100 mini JavaScript projects. These pro
 
 This project is a great way to practice **JavaScript's Date object**, **DOM manipulation**, and **real-time updates**. 🚀  
 
+
+### 2. To Do List Web Application
+
+   ![Digital Clock Preview](./To-do-list/img/to-do-list.png) 
+
+   - **Description**: This is a clean, minimalistic Todo App built with vanilla JavaScript, HTML, and CSS. It is designed to be lightweight yet functional, with a focus on user experience and performance.
+   - **Repo**: [Digital Clock](https://github.com/habibjx/JavaScript-100-Mini-Projects/tree/main/To-do-list)
+  - **Live View**: [Digital Clock](https://to-do-list-habibjx.netlify.app/)
+
+  **Features**  
+   - Add new to-dos by typing and clicking the **Add Todo** button.
+   - Press **Enter** to quickly add a task without clicking the button.
+   - Mark tasks as complete using the checkbox.
+   - On **hover**, a delete button appears to remove a specific task. 
+   - To-dos are saved in **localStorage**, so data will remain even after refreshing the page.
+   - Clean and modern UI with a focus on usability.
+
+   ## Tech Stack
+   - HTML
+   - CSS
+   - JavaScript (DOM Manipulation)
+   - LocalStorage
