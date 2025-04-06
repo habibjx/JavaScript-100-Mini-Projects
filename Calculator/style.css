@@ -1,3 +1,6 @@
+/* google fonts  */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -18,10 +21,53 @@ body{
     justify-content: center;
     align-items: center;
     background: var(--color-black);
+    font-family: "DM Serif Display", serif;
+}
+i{
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--color-black);
 }
 .container{
     max-width: 500px;
     background: var(--color-white);
     border-radius: 30px;
+    overflow: hidden;
+}
+.container .display-area{
+    width: 100%;
     padding: 25px 15px;
+    background: var(--color-gray-white);
+    box-shadow: 0 4px 4px rgba(0,0,0, 0.05);
+}
+.display-area .top-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+}
+.top-content div{
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
+    align-items: center;
+}
+.top-content div p{
+    font-size: 20px;
+}
+.top-content div i{
+    font-size: 20px;
+}
+.display-area p{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.display-area #calculate{
+    margin-top: 15px;
+    font-size: 28px;
+}
+.display-area #resultDisplay{
+    font-size: 32px;
+    text-align: right;
 }
