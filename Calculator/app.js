@@ -43,9 +43,13 @@ function calculation(value){
         if(inputData === "") inputData = "0";
         calculateDisplay.textContent = inputData;
     }else if(value === '='){
+        if(inputData === '') return;
         const result = eval(inputData);
+        inputData = "";
         resultDisplay.textContent = result;
-    }else if(value === "") return
+    }else if(value === "") {
+        return;
+    }
     else{
         inputData += value;
         calculateDisplay.textContent = inputData;
