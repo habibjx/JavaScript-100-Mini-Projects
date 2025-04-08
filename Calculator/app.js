@@ -1,6 +1,6 @@
 /**
  * Data: 07-04-2025.
- * Description:
+ * Description: Simple calculator using HTML, CSS & JavaScript.Used eval() for basic expression evaluation (for learning only).
  * Author: M H R Habib.
  */
 

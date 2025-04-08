@@ -50,3 +50,18 @@ This project is a great way to practice **JavaScript's Date object**, **DOM mani
    - CSS
    - JavaScript (DOM Manipulation)
    - LocalStorage
+### 2. Simple Calculator
+
+   ![Calculator Preview](./Calculator/img/calculator.png) 
+
+   - **Description**: I just built a basic yet functional calculator using HTML, CSS, and JavaScript! This project helped me understand DOM manipulation, event handling, and basic logic building in JavaScript.
+   - **Repo**: [Calculator](https://github.com/habibjx/JavaScript-100-Mini-Projects/tree/main/Calculator)
+  - **Live View**: [Calculator](https://calculator-habibjx.netlify.app/)
+
+  **Features**  
+   - Perform basic arithmetic operations: Addition, Subtraction, Multiplication, Division.
+   - Clear and Delete functionality.
+   - Responsive design for mobile and desktop.
+   - Clean and user-friendly UI
+   - Built with vanilla JavaScript (no external libraries).
+   - Used eval() for expression evaluation (used only for learning purpose; planning to replace with a safer alternative in future projects).
