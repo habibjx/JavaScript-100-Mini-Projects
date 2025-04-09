@@ -5,15 +5,87 @@
     border: none;
     outline: none;
 }
+:root{
+    --color-primary: #f0ffff;
+    --color-secondary: #618BE7;
+    --color-btn: #61E78D;
+    --color-section: #212F3D;
+}
 body{
     width: 100%;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #F0FFFF;
+    background:  var(--color-primary);
+    color: var(--color-primary);
+}
+input{
+    background: transparent;
 }
 .container{
-    background: #212F3D;
+    background: var(--color-section);
     padding: 20px;
+}
+.upper-color-boxes{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.upper-color-boxes .box{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+}
+.upper-color-boxes input{
+    width: fit-content;
+    padding: 4px 10px;
+    border: 2px solid #618BE7;
+    color: var(--color-primary);
+    border-radius: 5px;
+    cursor: pointer;
+}
+.copied{
+    position: absolute;
+    left: 20%;
+    top: 100%;
+    display: none;
+}
+#colorDisplay{
+    width: 100%;
+    height: 12rem;
+    margin: 20px 0;
+    border: 1px solid var(--color-btn);
+    background: var(--color-primary);
+}
+.hexAndRam{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.hexAndRam .hex{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+}
+.hexAndRam .hex input{
+    width: fit-content;
+    padding: 4px 10px;
+    border: 2px solid var(--color-btn);
+    color: var(--color-primary);
+    border-radius: 5px;
+    cursor: pointer;
+}
+.hexAndRam button{
+    font-size: 16px;
+    font-size: 600;
+    padding: 5px 20px;
+    border-radius: 5px;
+    background: var(--color-btn);
+    color: var(--color-section);
+    cursor: pointer;
 }
