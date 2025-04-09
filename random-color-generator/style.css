@@ -22,8 +22,10 @@ body{
 }
 input{
     background: transparent;
+    width: 130px;
 }
 .container{
+    max-width: 500px;
     background: var(--color-section);
     padding: 20px;
 }
@@ -40,7 +42,6 @@ input{
     position: relative;
 }
 .upper-color-boxes input{
-    width: fit-content;
     padding: 4px 10px;
     border: 2px solid #618BE7;
     color: var(--color-primary);
@@ -73,7 +74,6 @@ input{
     position: relative;
 }
 .hexAndRam .hex input{
-    width: fit-content;
     padding: 4px 10px;
     border: 2px solid var(--color-btn);
     color: var(--color-primary);
@@ -87,5 +87,26 @@ input{
     border-radius: 5px;
     background: var(--color-btn);
     color: var(--color-section);
+    cursor: pointer;
+}
+.pre-color{
+    width: 100%;
+    margin-top: 30px;
+}
+.pre-color h2{
+    border-bottom: 1px solid var(--color-primary);
+    padding-bottom: 5px;
+}
+.color-boxes{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+}
+.pre-color-box{
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+    background: var(--color-primary);
     cursor: pointer;
 }
