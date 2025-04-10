@@ -110,3 +110,21 @@ input{
     background: var(--color-primary);
     cursor: pointer;
 }
+@media screen and (max-width: 400px){
+    .container {
+        width: 90%;
+    }
+    .upper-color-boxes {
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+    }
+    .hexAndRam {
+        flex-direction: column;
+    }
+    .color-boxes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
