@@ -11,12 +11,12 @@
         <div class="upper-color-boxes">
             <div class="rgb box">
                 <h3>RGB</h3>
-                <input type="text" value="(240,255,255)">
+                <input type="text" value="(240,255,255)" id="rgbBox">
                 <span class="copied">Copied!</span>
             </div>
             <div class="hsl box">
                 <h3>HSL</h3>
-                <input type="text" value="(180,100%,97%)">
+                <input type="text" value="(180,100%,97%)" id="hslBox">
                 <span class="copied">Copied!</span>
             </div>
         </div>
@@ -26,11 +26,11 @@
         <div class="hexAndRam">
             <div class="hex">
                 <h3>Hex</h3>
-                <input type="text" value="61E78D">
+                <input type="text" value="61E78D" id="hexBox">
                 <span class="copied">Copied!</span>
             </div>
             <div class="ram">
-                <button>Random</button>
+                <button id="randomButton">Random Color</button>
             </div>
         </div>
         <div class="pre-color">
@@ -63,5 +63,7 @@
             </div>
         </div>
     </div>
+
+    <script src="./app.js"></script>
 </body>
 </html>
