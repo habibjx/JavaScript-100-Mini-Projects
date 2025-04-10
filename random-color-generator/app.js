@@ -1,7 +1,7 @@
 /**
  * Date: 10-4-2025
  * Author: M H R Habib.
- * Description: 
+ * Description: Created a random color generator. It displays random colors with RGB and Hex codes, which user can copy with a click.
  */
 
 // Global Variable
@@ -49,20 +49,27 @@ function hexColorCodeCopy(hex){
     navigator.clipboard.writeText(`#${hex.value}`);
     CopyTestAlert(hex);
 }
-function preColorCodeCopy(e, copyMsg){
+
+async function preColorCodeCopy(e, copyMsg) {
     const target = e.target;
-    if(target.className === "pre-color-box"){
-        navigator.clipboard.writeText(target.dataset.color);
-        if(isCopyTextHidden){
-            isCopyTextHidden = false;
-            copyMsg.style.display = "block";
-            setTimeout(() => {
-                copyMsg.style.display = "none"
-                isCopyTextHidden = true;
-            }, 2000);
+    if (target.className === "pre-color-box") {
+        try {
+            await navigator.clipboard.writeText(target.dataset.color);
+            if (isCopyTextHidden) {
+                isCopyTextHidden = false;
+                copyMsg.style.display = "block";
+                setTimeout(() => {
+                    copyMsg.style.display = "none";
+                    isCopyTextHidden = true;
+                }, 2000);
+            }
+        } catch (err) {
+            alert("Clipboard not supported on this device.");
         }
     }
 }
+
+
 //DOM function
 function DOMColorUpdate(rgbBox, hexBox, colorDisplay){
     const {r, g, b} = generateRGBColor();
