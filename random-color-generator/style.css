@@ -61,26 +61,10 @@ input{
     border: 1px solid var(--color-btn);
     background: var(--color-primary);
 }
-.hexAndRam{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
+.colorGBtn{
+    text-align: right;
 }
-.hexAndRam .hex{
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    position: relative;
-}
-.hexAndRam .hex input{
-    padding: 4px 10px;
-    border: 2px solid var(--color-btn);
-    color: var(--color-primary);
-    border-radius: 5px;
-    cursor: pointer;
-}
-.hexAndRam button{
+.colorGBtn button{
     font-size: 16px;
     font-size: 600;
     padding: 5px 20px;
