@@ -6,6 +6,11 @@
 
 // Global Variable
 
+const preColors = ["#FF5733", "#33FF57", "#3357FF", "#FF33A1", "#FFD700", "#800080", "#00FFFF", "#FF4500", "#008000", "#0000FF", "#FF0000", "#FFFF00", "#00FF00", "#808080", "#99516a", "#FFFFFF"];
+
+  
+let isCopyTextHidden = true;
+
 window.onload = () => {
     main()
 }
@@ -16,16 +21,31 @@ function main(){
     const rgbBox = document.getElementById("rgbBox");
     const hexBox = document.getElementById("hexBox");
     const colorDisplay = document.getElementById("colorDisplay");
+    const colorBoxes = document.querySelector(".color-boxes");
 
     //Event Listener
     randomButton.addEventListener("click", () => handleRandomButton(rgbBox, hexBox, colorDisplay));
 
+    rgbBox.addEventListener("click", () => rgbColorCodeCopy(rgbBox));
+    hexBox.addEventListener("click", () => hexColorCodeCopy(hexBox));
+
+    preColorUpdate(colorBoxes);
 }
 
 //Event handler
 function handleRandomButton(rgbBox, hexBox, colorDisplay){
     DOMColorUpdate(rgbBox, hexBox, colorDisplay);
     
+}
+function rgbColorCodeCopy(rgb){
+    rgb.select();
+    navigator.clipboard.writeText(`rgb(${rgb.value})`);
+    CopyTestAlert(rgb);
+}
+function hexColorCodeCopy(hex){
+    hex.select();
+    navigator.clipboard.writeText(`#${hex.value}`);
+    CopyTestAlert(hex);
 }
 
 //DOM function
@@ -38,6 +58,25 @@ function DOMColorUpdate(rgbBox, hexBox, colorDisplay){
     colorDisplay.style.background = rgbColor;
 }
 
+function CopyTestAlert(parent){
+    const span = parent.nextElementSibling;
+    if(isCopyTextHidden){
+        isCopyTextHidden = false
+        span.style.display = "block";
+        setTimeout(() => {
+            span.style.display = "none";
+            isCopyTextHidden = true;
+        }, 2000)
+    }
+}
+function preColorUpdate(parent){
+    for( let preColor of preColors ){
+        const div = document.createElement("div");
+        div.className = "pre-color-box";
+        div.style.background = preColor;
+        parent.appendChild(div);
+    }
+}
 //Utilities Function
 
 function generateRGBColor(){
