@@ -29,7 +29,7 @@ This repository contains a collection of 100 mini JavaScript projects. These pro
 This project is a great way to practice **JavaScript's Date object**, **DOM manipulation**, and **real-time updates**. 🚀  
 
 
-### 2. To Do List Web Application
+### 3. To Do List Web Application
 
    ![Digital Clock Preview](./To-do-list/img/to-do-list.png) 
 
@@ -50,7 +50,7 @@ This project is a great way to practice **JavaScript's Date object**, **DOM mani
    - CSS
    - JavaScript (DOM Manipulation)
    - LocalStorage
-### 2. Simple Calculator
+### 4. Simple Calculator
 
    ![Calculator Preview](./Calculator/img/calculator.png) 
 
@@ -65,3 +65,18 @@ This project is a great way to practice **JavaScript's Date object**, **DOM mani
    - Clean and user-friendly UI
    - Built with vanilla JavaScript (no external libraries).
    - Used eval() for expression evaluation (used only for learning purpose; planning to replace with a safer alternative in future projects).
+
+### 5. Random Color Generator
+
+   ![Random Color Generator Preview](./random-color-generator/img/random-color-generator.png) 
+
+   - **Description**: I created a random color generator using HTML, CSS, and JavaScript! The app generates a random color and displays it in a card-like container with both RGB and Hex color codes. You can easily copy the color codes by clicking on them, and a toast message will appear to confirm the action.
+   - **Repo**: [Random Color Generator](https://github.com/habibjx/JavaScript-100-Mini-Projects/tree/main/random-color-generator)
+  - **Live View**: [Random Color Generator](https://random-color-generator-habibjx.netlify.app/)
+
+  **Features**  
+   - Random color generation.
+   - Display of both RGB and Hex codes.
+   - Copy color codes with a click.
+   - Predefined color boxes for easy color selection.
+   - Interactive toast message for feedback.
