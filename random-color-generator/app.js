@@ -22,12 +22,14 @@ function main(){
     const hexBox = document.getElementById("hexBox");
     const colorDisplay = document.getElementById("colorDisplay");
     const colorBoxes = document.querySelector(".color-boxes");
+    const preColorCopyMsg = document.getElementById("preColorCopyMsg");
 
     //Event Listener
     randomButton.addEventListener("click", () => handleRandomButton(rgbBox, hexBox, colorDisplay));
 
     rgbBox.addEventListener("click", () => rgbColorCodeCopy(rgbBox));
     hexBox.addEventListener("click", () => hexColorCodeCopy(hexBox));
+    colorBoxes.addEventListener("click", (e) => preColorCodeCopy(e, preColorCopyMsg));
 
     preColorUpdate(colorBoxes);
 }
@@ -47,7 +49,20 @@ function hexColorCodeCopy(hex){
     navigator.clipboard.writeText(`#${hex.value}`);
     CopyTestAlert(hex);
 }
-
+function preColorCodeCopy(e, copyMsg){
+    const target = e.target;
+    if(target.className === "pre-color-box"){
+        navigator.clipboard.writeText(target.dataset.color);
+        if(isCopyTextHidden){
+            isCopyTextHidden = false;
+            copyMsg.style.display = "block";
+            setTimeout(() => {
+                copyMsg.style.display = "none"
+                isCopyTextHidden = true;
+            }, 2000);
+        }
+    }
+}
 //DOM function
 function DOMColorUpdate(rgbBox, hexBox, colorDisplay){
     const {r, g, b} = generateRGBColor();
@@ -73,6 +88,7 @@ function preColorUpdate(parent){
     for( let preColor of preColors ){
         const div = document.createElement("div");
         div.className = "pre-color-box";
+        div.dataset.color = preColor;
         div.style.background = preColor;
         parent.appendChild(div);
     }
