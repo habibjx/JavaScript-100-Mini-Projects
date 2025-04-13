@@ -11,7 +11,7 @@
     --color-text-area: #FFA6A6;
     --color-btn: #FF4D4D;
     --color-output: #B33636;
-    --shadow: box-shadow: 4px 4px 8px rgb(0,0,0,0.25);
+    --shadow: 4px 4px 8px rgb(0,0,0,0.25);
 }
 body{
     width: 100%;
@@ -19,4 +19,73 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    background: var(--color-bg);
+    color: var(--color-bg);
+}
+.container{
+    width: 600px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    border-radius: 30px;
+    background: var(--color-section);
+}
+.container textarea{
+    width: 100%;
+    min-height: 200px;
+    resize: vertical;
+    padding: 20px;
+    background: var(--color-text-area);
+    color: black;
+    font-size: 18px;
+    border-radius: 12px;
+    box-shadow:  0 2px 4px rgb(0,0,0,0.25);
+}
+.container button{
+    width: 40%;
+    margin: 20px 0 40px 0;
+    padding: 10px 30px;
+    border: 10px;
+    background: var(--color-btn);
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-bg);
+    cursor: pointer;
+    transition: .3s ease;
+}
+.container button:hover{
+    background: #f43c3c;
+}
+.container .outputs{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.outputs > div{
+    width: 40%;
+    background: var(--color-output);
+    border-radius: 8px;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+@media screen and (max-width: 540px){
+    .container textarea {
+        min-height: 150px;
+    }
+    .container button {
+        width: 100%;
+        font-weight: 500;
+    }
+    .container .outputs {
+        display: flex;
+        flex-direction: column;
+    }
+    .outputs > div {
+        width: 100%;
+    }
 }
