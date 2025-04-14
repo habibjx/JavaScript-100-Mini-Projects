@@ -66,12 +66,16 @@ body{
     gap: 10px;
 }
 .outputs > div{
-    width: 40%;
+    min-width: 40%;
+    width: fit-content;
     background: var(--color-output);
     border-radius: 8px;
     padding: 5px 20px;
     display: flex;
     justify-content: space-between;
+}
+.outputs > div :first-child{
+    margin-right: 4px;
 }
 @media screen and (max-width: 540px){
     .container textarea {
