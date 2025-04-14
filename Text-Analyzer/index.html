@@ -8,26 +8,27 @@
 </head>
 <body>
     <div class="container">
-        <textarea name="" id="textare" placeholder="Write Your Text..."></textarea>
-        <button>Analysis</button>
+        <textarea name="" id="textarea" placeholder="Write Your Text..."></textarea>
+        <button id="analysisButton">Analysis</button>
         <div class="outputs">
             <div>
                 <p>Total Words:</p>
-                <p>05</p>
+                <p id="wordDisplay">00</p>
             </div>
             <div>
                 <p>Total Characters:</p>
-                <p>20</p>
+                <p id="charDisplay">00</p>
             </div>
             <div>
                 <p>Longest word:</p>
-                <p>08</p>
+                <p id="longWordDisplay">Habibjx</p>
             </div>
             <div>
                 <p>Most frequent word:</p>
-                <p>04</p>
+                <p id="mostFrequentWordDisplay">Fency</p>
             </div>
         </div>
     </div>
+    <script src="./app.js"></script>
 </body>
 </html>
