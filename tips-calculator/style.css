@@ -1,0 +1,19 @@
+/* google font  */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --color-bg: #F0F1F3;
+    --color-text: #5D5967;
+    --color-text-bold: #262528;
+    --color-border: #9696FF;
+    --color-btn: #4847FB;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    outline: none;
+}
