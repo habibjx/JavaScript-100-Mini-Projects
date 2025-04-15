@@ -80,3 +80,20 @@ This project is a great way to practice **JavaScript's Date object**, **DOM mani
    - Copy color codes with a click.
    - Predefined color boxes for easy color selection.
    - Interactive toast message for feedback.
+
+### 6. Text Analyzer
+
+   ![Text Analyzer](./Text-Analyzer/img/text-analyzer-habibjx.netlify.app_.png)
+
+   - **Description**: Text Analyzer is a simple yet powerful tool that helps you analyze your written content instantly. It automatically detects the total number of words, characters, the longest word, and the most frequently used word. Whether you're a content writer, student, or developer, this tool is perfect for quickly evaluating your text.
+
+   - **Repo**: [repo](https://github.com/habibjx/JavaScript-100-Mini-Projects/tree/main/Text-Analyzer)
+   - **Live View**: [live-view](https://text-analyzer-habibjx.netlify.app/)
+
+   **Features**
+   - Total Word Count: Instantly shows how many words are in the text.
+   - Total Character Count: Displays the total number of characters, including spaces.
+   - Longest Word Finder: Identifies the longest word in the text.
+   - Most Frequent Word: Finds the word that appears most often.
+   - Real-Time Analysis: Get instant feedback as you type or paste your text.
+   - User-Friendly Interface: Clean and easy to use for everyone.
