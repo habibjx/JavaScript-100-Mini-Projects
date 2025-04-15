@@ -87,8 +87,8 @@ This project is a great way to practice **JavaScript's Date object**, **DOM mani
 
    - **Description**: Text Analyzer is a simple yet powerful tool that helps you analyze your written content instantly. It automatically detects the total number of words, characters, the longest word, and the most frequently used word. Whether you're a content writer, student, or developer, this tool is perfect for quickly evaluating your text.
 
-   - **Repo**: [repo](https://github.com/habibjx/JavaScript-100-Mini-Projects/tree/main/Text-Analyzer)
-   - **Live View**: [live-view](https://text-analyzer-habibjx.netlify.app/)
+   - **Repo**: [Text Analyzer](https://github.com/habibjx/JavaScript-100-Mini-Projects/tree/main/Text-Analyzer)
+   - **Live View**: [Text Analyzer](https://text-analyzer-habibjx.netlify.app/)
 
    **Features**
    - Total Word Count: Instantly shows how many words are in the text.

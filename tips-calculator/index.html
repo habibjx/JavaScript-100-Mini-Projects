@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tips Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Cart</a></li>
+            <li><a href="#">Foods</a></li>
+            <li><a href="#">Payment</a></li>
+            <li><a href="#">Order Review</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <form action="">
+            <label for="billAmount">Bill Amounts</label>
+            <input id="billAmount" type="text" placeholder="$ Enter Your Bill">
+
+            <label for="AmountPerPerson">Amount Per Person</label>
+            <input id="AmountPerPerson" type="text" value="$05">
+
+            <label for="numOfPeoples">Number Of Peoples</label>
+            <input id="numOfPeoples" type="text" placeholder="How many of you?">
+
+            <label for="tipsAmount">Tips Amounts</label>
+            <input id="tipsAmount" type="text" value="$05">
+
+            <div class="tip-percent">
+                <label for="tipsPercentage">Tips Percentage</label>
+                <input id="tipsPercentage" type="text" value="$05">
+                <div class="pre-percent">
+                    <input type="text" value="$10">
+                    <input type="text" value="$20">
+                    <input type="text" value="$30">
+                </div>
+            </div>
+            
+            <label for="totalAmount">Total Amounts</label>
+            <input id="totalAmount" type="text" value="$5">
+
+        </form>
+
+        <div class="buttons">
+            <button id="resetBtn">Reset All</button>
+            <button id="payBtn">Pay</button>
+        </div>
+    </header>
+
+    <script src="./app.js"></script>
+</body>
+</html>
