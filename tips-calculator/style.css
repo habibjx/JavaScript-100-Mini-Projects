@@ -23,8 +23,8 @@ body{
     margin: auto;
     background-color: var(--color-bg);
 }
-header{
-    /* border: 1px solid red; */
+.borderErr{
+    border-bottom: 2px solid red !important;
 }
 header nav{
     width: 100%;

@@ -18,7 +18,7 @@
                 <li><a href="#">Order Review</a></li>
             </ul>
         </nav>
-        <form>
+        <form id="form">
             <div class="formChild formLeft">
                 <label for="billAmount">Bill Amounts</label>
                 <input id="billAmount" type="text" placeholder="$ Enter Your Bill">
@@ -28,12 +28,12 @@
 
                 <div class="tip-percent">
                     <label for="tipsPercentage">Tips Percentage</label>
-                    <input id="tipsPercentage" type="text" value="$00">
+                    <input id="tipsPercentage" type="text" placeholder="%00">
 
                     <div class="pre-percent">
-                        <button id="preValuePercent1">$10</button>
-                        <button id="preValuePercent2">$20</button>
-                        <button id="preValuePercent3">$30</button>
+                        <button onclick="preValuePercent('10')">%10</button>
+                        <button onclick="preValuePercent('20')">%20</button>
+                        <button onclick="preValuePercent('30')">%30</button>
                     </div>
 
                 </div>  
