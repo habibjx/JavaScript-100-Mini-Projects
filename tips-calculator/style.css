@@ -17,3 +17,147 @@
     border: none;
     outline: none;
 }
+body{
+    width: 100%;
+    min-height: 100vh;
+    margin: auto;
+    background-color: var(--color-bg);
+}
+header{
+    /* border: 1px solid red; */
+}
+header nav{
+    width: 100%;
+    margin: 20px auto;
+    display: grid;
+    place-content: center;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+nav ul li a{
+    color: var(--color-text);
+    font-size: 18px;
+    position: relative;
+    
+}
+nav ul li a::after{
+    content : '';
+    width: 0;
+    height: 4px;
+    position: absolute;
+    background: var(--color-border);
+    left: 0;
+    bottom: -8px;
+    transition: .3s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+.active::after{
+    width: 100%;
+}
+nav ul li:nth-child(3) a{
+    color: var(--color-text-bold);
+    font-weight: 700;
+}
+/* form style ================= */
+
+header form{
+    width: 600px;
+    margin: 150px auto 0 auto;
+    display: flex;
+    gap: 20px;
+}
+header form .formChild{
+    flex: 1;
+}
+header form .formChild > *{
+    width: 100%;
+}
+header form label{
+    display: inline-block;
+    margin-top: 10px ;
+    font-size: 18px;
+    color: var(--color-text-bold);
+
+}
+header form  input{
+    padding-block: 5px;
+    font-size: 14px;
+    background: transparent;
+}
+header form input:placeholder{
+    color: var(--color-text);
+}
+.formLeft input{
+    border-bottom: 2px solid var(--color-border);
+}
+.tip-percent *{
+    width: 100%;
+}
+.pre-percent{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.pre-percent button{
+    width: 30%;
+    padding: 6px 10px;
+    text-align: center;
+    border-radius: 8px;
+    color: var(--color-bg);
+    background: #74839e;
+    cursor: pointer;
+}
+.formRight input{
+    margin-top: 5px;
+    text-align: center;
+    border: 2px solid var(--color-border);
+    border-radius: 20px;
+}
+/* #totalAmount{
+    background: var(--color-btn) !important;
+    color: var(--color-bg);
+    border-radius: 20px;
+    text-align: center;
+    border: none;
+} */
+.buttons{
+    width: 600px;
+    margin: 30px auto 0 auto;
+    display:  flex;
+    justify-content: space-between;
+}
+.buttons button{
+    width: 30%;
+    padding: 6px 10px;
+    text-align: center;
+    border-radius: 8px;
+    color: var(--color-bg);
+    background: var(--color-btn);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 620px){
+    header {
+        width: 90%;
+        margin: auto;
+    }
+    header nav{
+        display: none;
+    }
+    header form {
+        width: 100%;
+        flex-direction: column;
+    }
+    .buttons {
+        width: 100%;
+    }
+    .buttons button{
+        width: 40%;
+    }
+}

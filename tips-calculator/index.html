@@ -5,43 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tips Calculator</title>
     <link rel="stylesheet" href="style.css">
+    <script src="./app.js" defer></script>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#">Cart</a></li>
-            <li><a href="#">Foods</a></li>
-            <li><a href="#">Payment</a></li>
-            <li><a href="#">Order Review</a></li>
-        </ul>
-    </nav>
-
+  
     <header>
-        <form action="">
-            <label for="billAmount">Bill Amounts</label>
-            <input id="billAmount" type="text" placeholder="$ Enter Your Bill">
+        <nav>
+            <ul>
+                <li><a href="#">Cart</a></li>
+                <li><a href="#">Foods</a></li>
+                <li><a href="#" class="active">Payment</a></li>
+                <li><a href="#">Order Review</a></li>
+            </ul>
+        </nav>
+        <form>
+            <div class="formChild formLeft">
+                <label for="billAmount">Bill Amounts</label>
+                <input id="billAmount" type="text" placeholder="$ Enter Your Bill">
 
-            <label for="AmountPerPerson">Amount Per Person</label>
-            <input id="AmountPerPerson" type="text" value="$05">
+                <label for="numOfPeoples">Number Of Peoples</label>
+                <input id="numOfPeoples" type="text" placeholder="How many of you?">
 
-            <label for="numOfPeoples">Number Of Peoples</label>
-            <input id="numOfPeoples" type="text" placeholder="How many of you?">
+                <div class="tip-percent">
+                    <label for="tipsPercentage">Tips Percentage</label>
+                    <input id="tipsPercentage" type="text" value="$00">
 
-            <label for="tipsAmount">Tips Amounts</label>
-            <input id="tipsAmount" type="text" value="$05">
+                    <div class="pre-percent">
+                        <button id="preValuePercent1">$10</button>
+                        <button id="preValuePercent2">$20</button>
+                        <button id="preValuePercent3">$30</button>
+                    </div>
 
-            <div class="tip-percent">
-                <label for="tipsPercentage">Tips Percentage</label>
-                <input id="tipsPercentage" type="text" value="$05">
-                <div class="pre-percent">
-                    <input type="text" value="$10">
-                    <input type="text" value="$20">
-                    <input type="text" value="$30">
-                </div>
+                </div>  
             </div>
-            
-            <label for="totalAmount">Total Amounts</label>
-            <input id="totalAmount" type="text" value="$5">
+
+            <div class="formChild formRight">
+                <label for="AmountPerPerson">Amount Per Person</label>
+                <input id="AmountPerPerson" type="text" value="$00">
+
+                <label for="tipsAmount">Tips Amounts</label>
+                <input id="tipsAmount" type="text" value="$00">
+
+                <label for="totalAmount">Total Amounts</label>
+                <input id="totalAmount" type="text" value="$00">
+            </div >
 
         </form>
 
@@ -49,8 +56,7 @@
             <button id="resetBtn">Reset All</button>
             <button id="payBtn">Pay</button>
         </div>
-    </header>
 
-    <script src="./app.js"></script>
+    </header>
 </body>
 </html>
