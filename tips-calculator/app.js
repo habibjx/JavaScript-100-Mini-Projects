@@ -30,60 +30,60 @@ function main(){
 
 
     //Event Listener
-    billAmount.addEventListener("keyup", () => handleBillAmount(billAmount));
-    numOfPeoples.addEventListener("keyup", () => handleNumOfPeoples(numOfPeoples));
-    tipsPercentage.addEventListener("keyup", () => handleTipsPercentage(tipsPercentage));
-    resetBtn.addEventListener("click", () => {
-        resetAllValue()
-    })
-    payBtn.addEventListener("click", () => {
-        alert("Payment Successfully Complete!")
-        resetAllValue();
-    })
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
-    })
+    billAmount.addEventListener("keyup", () => handleInput(billAmount));
+    numOfPeoples.addEventListener("keyup", () => handleInput(numOfPeoples));
+    tipsPercentage.addEventListener("keyup", () => handleInput(tipsPercentage));
+
+    // resetBtn.addEventListener("click", () => {
+    //     resetAllValue()
+    // })
+    // payBtn.addEventListener("click", () => {
+    //     alert("Payment Successfully Complete!")
+    //     resetAllValue();
+    // })
+    // form.addEventListener("submit", (e) => {
+    //     e.preventDefault();
+    // })
 
 }
 
 // Event Handler ==================
 
-function handleBillAmount(inputElement){
-    const value = inputElement.value;
+function handleInput(input){
+    const value = Number(input.value);
+    const identity = input.dataset.identity;
     const correctValue = isValidNumber(value);
-    errDisplay(inputElement, correctValue);
-    if(correctValue){
-        bill = Number(value);
-        updateAllValue();
+    errDisplay(input, correctValue);
+
+    if(identity === "billAmount"){
+        if(correctValue){
+            bill = value;
+            updateAllValue();
+        }
+
+    } 
+    else if(identity === "people"){
+        if(correctValue){
+            people = value;
+            updateAllValue();
+        }
+    }
+    else if(identity === "tipsAmount"){
+        if(correctValue){
+            tips = value;  
+            updateAllValue();
+        }
     }
 }
-function handleNumOfPeoples(inputElement){
-    const value = inputElement.value;
-    const correctValue = isValidNumber(value);
-    errDisplay(inputElement, correctValue);
-    if(correctValue){
-        people = Number(value);
-        updateAllValue();
-    }
-}
-function handleTipsPercentage(inputElement){
-    const value = inputElement.value;
-    const correctValue = isValidNumber(value);
-    errDisplay(inputElement, correctValue);
-    if(correctValue){
-        tips = Number(value);
-        updateAllValue();
-    }
-}
-function resetAllValue(){
-    bill = 0;
-    people = 1;
-    tips = 0;
-    billAmount.value = "";
-    numOfPeoples.value = "";
-    tipsPercentage.value = "";
-    updateAllValue();
-}
+// function resetAllValue(){
+//     bill = 0;
+//     people = 1;
+//     tips = 0;
+//     billAmount.value = "";
+//     numOfPeoples.value = "";
+//     tipsPercentage.value = "";
+//     updateAllValue();
+// }
 
 //DOM function ==================
 function updateAllValue(){
@@ -93,6 +93,11 @@ function updateAllValue(){
     document.getElementById("totalAmount").value = `${total}`;
 }
 
+/**
+ * If the input is not a number (or invalid), adds an error class.
+ * @param {HTMLElement} element 
+ * @param {boolean} correctValue 
+ */
 function errDisplay(element, correctValue){
     if(correctValue){
         if(element.className === "borderErr") element.classList.remove("borderErr");
@@ -115,6 +120,6 @@ function isValidNumber(num){
 function calculate(bill, people, tips){
     const perPerson = bill / people;
     const tipsAmount = (tips / 100) * bill;
-    const total = bill + tips;
+    const total = bill + tipsAmount;
     return {perPerson, tipsAmount, total};
 }

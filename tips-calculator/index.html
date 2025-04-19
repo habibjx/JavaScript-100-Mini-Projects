@@ -21,14 +21,14 @@
         <form id="form">
             <div class="formChild formLeft">
                 <label for="billAmount">Bill Amounts</label>
-                <input id="billAmount" type="text" placeholder="$ Enter Your Bill">
+                <input id="billAmount" data-identity ="billAmount" type="text" placeholder="$ Enter Your Bill">
 
                 <label for="numOfPeoples">Number Of Peoples</label>
-                <input id="numOfPeoples" type="text" placeholder="How many of you?">
+                <input id="numOfPeoples" data-identity ="people" type="text" placeholder="How many of you?">
 
                 <div class="tip-percent">
                     <label for="tipsPercentage">Tips Percentage</label>
-                    <input id="tipsPercentage" type="text" placeholder="%00">
+                    <input id="tipsPercentage" data-identity ="tipsAmount" type="text" placeholder="%00">
 
                     <div class="pre-percent">
                         <button onclick="preValuePercent('10')">%10</button>
