@@ -104,10 +104,10 @@ This project is a great way to practice **JavaScript's Date object**, **DOM mani
 
    - **Description** A simple and interactive Tips Calculator that helps users calculate the per-person cost of a bill, including tips, based on the total bill amount, number of people, and selected tip percentage. This tool ensures a smooth user experience with error handling, reset functionality, and final payment confirmation alerts.
 
-   - **Repo**: [Text Analyzer](https://github.com/habibjx/JavaScript-100-Mini-Projects/tree/main/tips-calculator)
-   - **Live View**: [Text Analyzer](https://tips-calculator-habibjx.netlify.app/)
+   - **Repo**: [tips calculator](https://github.com/habibjx/JavaScript-100-Mini-Projects/tree/main/tips-calculator)
+   - **Live View**: [tips calculator](https://tips-calculator-habibjx.netlify.app/)
 
-    **Features**
+   **Features**
    - Bill Amount Input – Easily input the total bill.
    - Number of People Input – Share the bill between any number of people.
    - Tip Percentage Selection – Choose or enter a custom tip percentage.
