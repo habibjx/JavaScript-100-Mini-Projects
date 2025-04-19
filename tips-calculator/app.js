@@ -64,7 +64,7 @@ function handleInput(input){
     } 
     else if(identity === "people"){
         if(correctValue){
-            people = value;
+            people = value === 0 ? value + 1 : value;
             updateAllValue();
         }
     }
