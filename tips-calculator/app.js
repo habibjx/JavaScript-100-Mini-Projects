@@ -41,9 +41,9 @@ function main(){
     //     alert("Payment Successfully Complete!")
     //     resetAllValue();
     // })
-    // form.addEventListener("submit", (e) => {
-    //     e.preventDefault();
-    // })
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+    })
 
 }
 
@@ -118,8 +118,8 @@ function isValidNumber(num){
     return regex.test(num);
 }
 function calculate(bill, people, tips){
-    const perPerson = bill / people;
-    const tipsAmount = (tips / 100) * bill;
-    const total = bill + tipsAmount;
+    const tipsAmount = Number(( (tips / 100) * bill).toFixed(2));
+    const total = Number((bill + tipsAmount).toFixed(2));
+    const perPerson = Number((total / people).toFixed(2));
     return {perPerson, tipsAmount, total};
 }
