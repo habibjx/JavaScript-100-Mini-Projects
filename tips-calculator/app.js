@@ -31,14 +31,9 @@ function main(){
     billAmount.addEventListener("keyup", () => handleInput(billAmount));
     numOfPeoples.addEventListener("keyup", () => handleInput(numOfPeoples));
     tipsPercentage.addEventListener("keyup", () => handleInput(tipsPercentage));
+    resetBtn.addEventListener("click", () => resetAllValue(billAmount, numOfPeoples, tipsPercentage))
+    payBtn.addEventListener("click", () => payComplete(billAmount, numOfPeoples, tipsPercentage))
 
-    resetBtn.addEventListener("click", () => {
-        resetAllValue(billAmount, numOfPeoples, tipsPercentage);
-    })
-    // payBtn.addEventListener("click", () => {
-    //     alert("Payment Successfully Complete!")
-    //     resetAllValue();
-    // })
     
     form.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -78,6 +73,14 @@ function resetAllValue(b, p, t){
     bill = 0,  people = 1, tips = 0;
     updateAllValue();
     b.value = "", p.value = "", t.value = "";
+}
+function payComplete(b, p, t){
+    if(b.value === "" || p.value === ""){
+        alert("Please Complete Task");
+        return;
+    }
+    alert("payment complete");
+    resetAllValue(b, p, t);
 }
 
 //DOM function ==================
