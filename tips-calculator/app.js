@@ -5,9 +5,7 @@
  */
 
 // Global Variables
-const billAmount = document.getElementById("billAmount");
-const numOfPeoples = document.getElementById("numOfPeoples");
-const tipsPercentage = document.getElementById("tipsPercentage");
+
 let bill = 0;
 let people = 1;
 let tips = 0;
@@ -34,13 +32,14 @@ function main(){
     numOfPeoples.addEventListener("keyup", () => handleInput(numOfPeoples));
     tipsPercentage.addEventListener("keyup", () => handleInput(tipsPercentage));
 
-    // resetBtn.addEventListener("click", () => {
-    //     resetAllValue()
-    // })
+    resetBtn.addEventListener("click", () => {
+        resetAllValue(billAmount, numOfPeoples, tipsPercentage);
+    })
     // payBtn.addEventListener("click", () => {
     //     alert("Payment Successfully Complete!")
     //     resetAllValue();
     // })
+    
     form.addEventListener("submit", (e) => {
         e.preventDefault();
     })
@@ -75,15 +74,11 @@ function handleInput(input){
         }
     }
 }
-// function resetAllValue(){
-//     bill = 0;
-//     people = 1;
-//     tips = 0;
-//     billAmount.value = "";
-//     numOfPeoples.value = "";
-//     tipsPercentage.value = "";
-//     updateAllValue();
-// }
+function resetAllValue(b, p, t){
+    bill = 0,  people = 1, tips = 0;
+    updateAllValue();
+    b.value = "", p.value = "", t.value = "";
+}
 
 //DOM function ==================
 function updateAllValue(){
