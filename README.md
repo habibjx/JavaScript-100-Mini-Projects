@@ -97,3 +97,23 @@ This project is a great way to practice **JavaScript's Date object**, **DOM mani
    - Most Frequent Word: Finds the word that appears most often.
    - Real-Time Analysis: Get instant feedback as you type or paste your text.
    - User-Friendly Interface: Clean and easy to use for everyone.
+
+### 7. Tips Calculator
+
+   ![tips calculator](./tips-calculator/img/tips-calculator-habibjx.netlify.app_.png)
+
+   - **Description** A simple and interactive Tips Calculator that helps users calculate the per-person cost of a bill, including tips, based on the total bill amount, number of people, and selected tip percentage. This tool ensures a smooth user experience with error handling, reset functionality, and final payment confirmation alerts.
+
+   - **Repo**: [Text Analyzer](https://github.com/habibjx/JavaScript-100-Mini-Projects/tree/main/tips-calculator)
+   - **Live View**: [Text Analyzer](https://tips-calculator-habibjx.netlify.app/)
+
+    **Features**
+   - Bill Amount Input – Easily input the total bill.
+   - Number of People Input – Share the bill between any number of people.
+   - Tip Percentage Selection – Choose or enter a custom tip percentage.
+   - Per Person Calculation – Automatically displays the tip amount and total per person.
+   - Validation Error Messages – Shows alerts if any input is missing or invalid.
+   - Reset Button – Clears all inputs and outputs with a single click.
+   - Pay Button – Confirms the transaction. If fields are empty, alerts the user to fill them.
+   - Completion Alert – Notifies when all fields are correctly filled and calculation is complete.
+

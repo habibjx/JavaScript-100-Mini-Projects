@@ -1,6 +1,6 @@
 /**
  * Date: 18-04-2025.
- * Description: 
+ * Description: A simple tips calculator to split bills with tip percentage, showing per person cost, error alerts, reset, and payment confirmation.
  * Author M H R Habib.
  */
 
