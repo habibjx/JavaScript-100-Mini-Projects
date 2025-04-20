@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+:root{
+    --color-bg: #F5FBF9;
+    --color-primary: #0DC28F;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-bg);
+}
+.container{
+    /* border: 1px solid red; */
+    width: 40%;
+    margin: auto;
+    padding: 20px;
+}
+.password-display{
+    position: relative;
+}
+.password-display input{
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 50px;
+    background: #F2F5FA;
+    box-shadow: 0 2px 4px rgba(0,0,0, 0.25);
+}
+.password-display i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.password-display :nth-child(2){
+    right: 50px;
+}
