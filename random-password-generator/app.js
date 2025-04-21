@@ -16,28 +16,22 @@ function main(){
     const passwordRange = document.getElementById("passwordRange");
     const selector = document.getElementById("selector");
     const passTypeSwitch = document.querySelectorAll(".pass-type-switch");
-    
+    const increase = document.getElementById("increase");
+    const decrease = document.getElementById("decrease");
     
 
     // Event Listener
-    passwordRange.addEventListener("input", (e) => handlePasswordRand(e, selector));
+    passwordRange.addEventListener("input", (e) => updateInputRange(e.target.value, selector));
 
     passTypeSwitch.forEach((element) => {
         handlePassTypeSwitch(element);
     })
+    increase.addEventListener("click", () => handleIncreaseDecrease(passwordRange, selector, 1));
+    decrease.addEventListener("click", () => handleIncreaseDecrease(passwordRange,selector, -1));
 
 }
 
 //Event Handler
-function handlePasswordRand(e, selector){
-    let value = e.target.value;
-    if(value <= 50){
-        selector.style.left = value + "%";
-    }
-    else if(value > 50){
-        selector.style.left = `calc(${value}% - 30px)`
-    }
-}
 
 function handlePassTypeSwitch(element){
     const identity = element.dataset.identity;
@@ -57,6 +51,15 @@ function handlePassTypeSwitch(element){
     })
 }
 
+function handleIncreaseDecrease(range, selector, inDe){
+    let value = Number(range.value);
+    range.value = range.value = value + (inDe);
+    
+    let newValue = Number(range.value);
+    updateInputRange(newValue, selector);
+    console.log(newValue)
+}
+
 // DOM function
 
 function passTypeSwitch(element){
@@ -68,6 +71,24 @@ function passTypeSwitch(element){
     else{
         switchPoint.style.left = "3px";
     }
+}
+
+/**
+ * smoothly update input range 
+ * @param {Number} value 
+ * @param {HTMLCollection} selector 
+ */
+function updateInputRange(value, selector){
+    const parent = selector.parentElement;
+    const parentWidth = parent.offsetWidth;
+    const childWidth = selector.offsetWidth;
+  
+    // Calculate max left position so that the right side doesn't go outside
+    const maxLeft = parentWidth - childWidth;
+  
+    // Calculate position based on percentage
+    const leftPx = (value / 100) * maxLeft;
+    selector.style.left = `${leftPx}px`;
 }
 
 // Utilities function
