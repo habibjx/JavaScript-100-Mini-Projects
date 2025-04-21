@@ -29,44 +29,34 @@
         <div class="customize-password">
             <div class="upper-box passType">
                 <label for="uper">ABC</label>
-                <input type="checkbox" name="checkbox" id="uper">
-                <span><div id="passTypeSwitch"></div></span>
+                <span class="pass-type-switch" data-identity="ABC">
+                    <div class="pass-switch-point"></div>
+                </span>
             </div>
             
            <div class="lower-box passType">
                 <label for="lower">abc</label>
-                <input type="checkbox" name="checkbox" id="lower">
-                <span><div id="passTypeSwitch"></div></span>
+                <span class="pass-type-switch" data-identity="abc">
+                    <div class="pass-switch-point"></div>
+                </span>
            </div>
 
           <div class="number-box passType">
             <label for="num">123</label>
-            <input type="checkbox" name="checkbox" id="num">
-            <span><div id="passTypeSwitch"></div></span>
+            <span class="pass-type-switch" data-identity="123">
+                <div class="pass-switch-point"></div>
+            </span>
           </div>
 
          <div class="symbol-box passType">
             <label for="symbol">$#&</label>
-            <input type="checkbox" name="checkbox" id="symbol">
-            <span><div id="passTypeSwitch"></div></span>
+            <span class="pass-type-switch" data-identity="$#&">
+                <div class="pass-switch-point"></div>
+            </span>
          </div>
 
         </div>
     </div>
 
-
-    <script>
-        const passwordRange = document.getElementById("passwordRange");
-        const selector = document.getElementById("selector");
-        passwordRange.addEventListener("input", function(){
-            let value = this.value;
-            if(value <= 50){
-                selector.style.left = value + "%";
-            }
-            else if(value > 50){
-                selector.style.left = `calc(${value}% - 30px)`
-            }
-        })
-    </script>
 </body>
 </html>
