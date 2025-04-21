@@ -26,46 +26,47 @@
             </div>
             <i class="fa-solid fa-plus"></i>
         </div>
-        <script>
-            const passwordRange = document.getElementById("passwordRange");
-            const selector = document.getElementById("selector");
-            passwordRange.addEventListener("input", function(){
-                let value = this.value;
-                console.log(value)
-                if(value <= 50){
-                    selector.style.left = value + "%";
-                }
-                else if(value > 50){
-                    selector.style.left = `calc(${value}% - 30px)`
-                }
-            })
-        </script>
         <div class="customize-password">
-            <div class="upper-box">
+            <div class="upper-box passType">
                 <label for="uper">ABC</label>
                 <input type="checkbox" name="checkbox" id="uper">
-                <span></span>
+                <span><div id="passTypeSwitch"></div></span>
             </div>
             
-           <div class="lower-box">
+           <div class="lower-box passType">
                 <label for="lower">abc</label>
                 <input type="checkbox" name="checkbox" id="lower">
-                <span</span>
+                <span><div id="passTypeSwitch"></div></span>
            </div>
 
-          <div class="number-box">
+          <div class="number-box passType">
             <label for="num">123</label>
             <input type="checkbox" name="checkbox" id="num">
-            <span></span>
+            <span><div id="passTypeSwitch"></div></span>
           </div>
 
-         <div class="symbol-box">
+         <div class="symbol-box passType">
             <label for="symbol">$#&</label>
             <input type="checkbox" name="checkbox" id="symbol">
-            <span></span>
+            <span><div id="passTypeSwitch"></div></span>
          </div>
 
         </div>
     </div>
+
+
+    <script>
+        const passwordRange = document.getElementById("passwordRange");
+        const selector = document.getElementById("selector");
+        passwordRange.addEventListener("input", function(){
+            let value = this.value;
+            if(value <= 50){
+                selector.style.left = value + "%";
+            }
+            else if(value > 50){
+                selector.style.left = `calc(${value}% - 30px)`
+            }
+        })
+    </script>
 </body>
 </html>
