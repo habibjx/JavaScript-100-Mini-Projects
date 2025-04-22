@@ -46,7 +46,12 @@ body{
 .password-display :nth-child(2){
     right: 50px;
 }
-
+.password-display #copyText{
+    position: absolute;
+    top: -15px;
+    right: 40px;
+    font-size: 18px;
+}
 .password-range{
     display: flex;
     justify-content: space-between;

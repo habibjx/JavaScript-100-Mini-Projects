@@ -18,7 +18,9 @@ function main(){
     const passTypeSwitch = document.querySelectorAll(".pass-type-switch");
     const increase = document.getElementById("increase");
     const decrease = document.getElementById("decrease");
-    
+    const password = document.getElementById("password");
+    const copy = document.getElementById("copy");
+    const copyText = document.getElementById("copyText");
 
     // Event Listener
     passwordRange.addEventListener("input", (e) => updateInputRange(e.target.value, selector));
@@ -28,7 +30,7 @@ function main(){
     })
     increase.addEventListener("click", () => handleIncreaseDecrease(passwordRange, selector, 1));
     decrease.addEventListener("click", () => handleIncreaseDecrease(passwordRange,selector, -1));
-
+    copy.addEventListener("click", () => handleCopy(password, copyText));
 }
 
 //Event Handler
@@ -52,12 +54,28 @@ function handlePassTypeSwitch(element){
 }
 
 function handleIncreaseDecrease(range, selector, inDe){
+    range.value = Number(range.value) + (inDe);
     let value = Number(range.value);
-    range.value = range.value = value + (inDe);
-    
-    let newValue = Number(range.value);
-    updateInputRange(newValue, selector);
-    console.log(newValue)
+    updateInputRange(value, selector);
+    console.log(value)
+}
+
+function handleCopy(input, copyText){
+    input.select();
+    try{
+        navigator.clipboard.writeText(input.value);
+        copyText.textContent = "Copied!"
+        if(copyText.dataset.open === "true"){
+            copyText.dataset.open = "false";
+            setTimeout(() => {
+                copyText.textContent = "";
+                copyText.dataset.open = "true";
+            }, 2000)
+        }   
+    }
+    catch(err){
+        alert("Don't support copy your device", err);
+    }
 }
 
 // DOM function
