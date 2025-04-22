@@ -30,13 +30,14 @@ function main(){
 
     // Event Listener
     passwordRange.addEventListener("input", (e) => updateInputRange(e.target.value, selector));
-
+    
     passTypeSwitch.forEach((element) => {
         handlePassTypeSwitch(element);
     })
     increase.addEventListener("click", () => handleIncreaseDecrease(passwordRange, selector, 1));
     decrease.addEventListener("click", () => handleIncreaseDecrease(passwordRange,selector, -1));
     copy.addEventListener("click", () => handleCopy(password, copyText));
+    updateInputRange(passwordRange.value, selector);
 }
 
 //Event Handler
@@ -131,6 +132,7 @@ function updateInputRange(value, selector){
     // Calculate position based on percentage
     const leftPx = (value / 100) * maxLeft;
     selector.style.left = `${leftPx}px`;
+    passwordGenerator(value);
 }
 
 // Utilities function

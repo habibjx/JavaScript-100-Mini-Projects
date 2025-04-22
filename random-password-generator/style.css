@@ -79,7 +79,6 @@ body{
 }
 .password-range .slider{
     flex: 1;
-    /* border: 1px solid red; */
     display: flex;
     place-content: center;
     position: relative;
