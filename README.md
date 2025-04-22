@@ -117,3 +117,28 @@ This project is a great way to practice **JavaScript's Date object**, **DOM mani
    - Pay Button – Confirms the transaction. If fields are empty, alerts the user to fill them.
    - Completion Alert – Notifies when all fields are correctly filled and calculation is complete.
 
+### 8. Random Password Generator 
+
+
+   ![Random Password Generator](./random-password-generator/img/random-password-generator.png)
+
+   - **Description** Just built a Random Password Generator using HTML, CSS, and JavaScript!
+   This project is not just about generating random passwords—it’s fully interactive and user-friendly. From copy functionality to custom range sliders and toggle buttons for character types—every feature is designed to enhance the user experience.
+
+   - **Repo**: [Random Password Generator](https://github.com/habibjx/JavaScript-100-Mini-Projects/tree/main/random-password-generator)
+   - **Live View**: [Random Password Generator](https://random-password-generator-habibjx.netlify.app/)
+
+   **Key Features:**
+   -  Password displayed in an input box with:
+      - Copy button (shows confirmation when clicked).
+      - Regenerate button to generate a new password.
+   -  Custom Range Slider (0-100) to set password length:
+      - (+ -) buttons to increase/decrease the range.
+      - Live display of current password length above the slider.
+   - Character Type Toggle Buttons:
+      - Uppercase.
+      - Lowercase.
+      - Numbers.
+      - Symbols.
+
+   - Smart logic ensures password only contains selected character types.

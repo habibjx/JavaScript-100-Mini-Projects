@@ -1,6 +1,6 @@
 /**
  * Date: 21-04-2025
- * Description:
+ * Description: A fully interactive password generator with copy, custom length control, and character-type toggles for a smooth user experience.
  * Author: M H R Habib.
  */
 
@@ -37,6 +37,9 @@ function main(){
     increase.addEventListener("click", () => handleIncreaseDecrease(passwordRange, selector, 1));
     decrease.addEventListener("click", () => handleIncreaseDecrease(passwordRange,selector, -1));
     copy.addEventListener("click", () => handleCopy(password, copyText));
+    reGeneratePass.addEventListener("click", () => passwordGenerator(passwordRange.value));
+
+    // Auto call
     updateInputRange(passwordRange.value, selector);
 }
 
