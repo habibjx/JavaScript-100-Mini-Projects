@@ -28,10 +28,8 @@ body{
     height: 300px;
     border-radius: 50%;
     border: 20px solid #D86B6B;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 55px;
+    padding: 31% 9%;
 }
 .container .buttons{
     display: flex;
@@ -53,7 +51,7 @@ body{
 @media screen and (max-width: 600px){
     .container {
         width: 90%;
-        padding: 5%;
+        padding: 20% 5%;
     }
     .container .display {
         width: 250px;
@@ -68,6 +66,7 @@ body{
         height: 200px;
         border: 10px solid #D86B6B;
         font-size: 32px;
+        padding: 35% 16%
     }
     .buttons button {
         font-size: 18px;
