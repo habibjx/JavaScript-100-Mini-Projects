@@ -1,0 +1,77 @@
+/* google fonts  */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "DM Serif Display", serif;
+    color: #fff;
+}
+.container{
+    padding: 150px;
+    background: #344359;
+    border-radius: 30px;
+    display: grid;
+    place-content: center;
+}
+.container .display{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 20px solid #D86B6B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 55px;
+}
+.container .buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.buttons button{
+    font-size: 24px;
+    padding: 10px 30px;
+    border-radius: 30px;
+    background: #974B4B;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.buttons button:hover{
+    background: #D86B6B;
+}
+@media screen and (max-width: 600px){
+    .container {
+        width: 90%;
+        padding: 5%;
+    }
+    .container .display {
+        width: 250px;
+        height: 250px;
+        border: 15px solid #D86B6B;
+        font-size: 44px;
+    }
+}
+@media screen and (max-width: 350px){
+    .container .display {
+        width: 200px;
+        height: 200px;
+        border: 10px solid #D86B6B;
+        font-size: 32px;
+    }
+    .buttons button {
+        font-size: 18px;
+        padding: 5px 20px;
+        border-radius: 20px;
+    }
+}
