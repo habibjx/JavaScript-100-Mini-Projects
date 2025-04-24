@@ -142,3 +142,22 @@ This project is a great way to practice **JavaScript's Date object**, **DOM mani
       - Symbols.
 
    - Smart logic ensures password only contains selected character types.
+
+
+### 9. Stop Watch
+
+
+   ![Stop Watch](./stop-watch/img/stop-watch-habibjx.netlify.app_.png)
+
+   - **Description** This stopwatch is a simple and interactive timer application designed with a circular time display. The time is shown in a visually appealing circular layout. It features two main buttons: Start and Reset. When the Start button is clicked, the stopwatch begins counting and the button label changes to Pause. Clicking Pause stops the timer and toggles the button back to Start. Clicking the Reset button resets the timer to 00:00. It's ideal for use in web projects or personal practice.
+
+   - **Repo**: [Stop Watch](https://github.com/habibjx/JavaScript-100-Mini-Projects/tree/main/stop-watch)
+   - **Live View**: [Stop Watch](https://stop-watch-habibjx.netlify.app/)
+
+   **Key Features:**
+   - Circular time display.
+   - Start/Pause toggle button.
+   - Reset button to set time back to zero.
+   - Responsive design for all screen sizes.
+   - Clean and simple user interface.
+   - Built using HTML, CSS, and JavaScript only.

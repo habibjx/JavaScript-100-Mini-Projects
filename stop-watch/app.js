@@ -1,6 +1,6 @@
 /**
  * Date: 23-04-2025.
- * Description:
+ * Description: A simple stopwatch with a circular timer display, featuring Start/Pause toggle and Reset button, built for web use.
  * Author: M H R Habib.
  */
 
