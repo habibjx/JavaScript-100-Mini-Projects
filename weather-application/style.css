@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F4F9FF;
+    color: #fff;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+.container{
+    padding: 40px;
+    border-radius: 30px;
+    background: #293251;
+}
+.container .search-area{
+    width: 70%;
+    margin: auto;
+    background: #4F5772;
+    border-radius: 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0, 0.25);
+    position: relative;
+}
+.search-area input{
+    width: 100%;
+    padding: 12px 20px;
+    background: transparent;
+    color: #fff;
+    font-size: 16px;
+}
+.search-area input::placeholder{
+    color: #C5C5C5;
+}
+.search-area i{
+    position: absolute;
+    top: 50%;
+    right: 3%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    cursor: pointer;
+    color: #C5C5C5;
+}
+.content{
+    margin: auto;
+}
+.content .location{
+    width: 100%;
+    padding-left: 70%;
+    margin-top: 20px;
+}
+.location p:first-child{
+    font-size: 18px;
+    font-weight: 700;
+}
+.content .weather-info{
+    margin-top: 20px;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    gap: 5%;
+}
+.content-left{
+    text-align: center;
+}
+.content-left img{
+    width: 200px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+.content-left #temperature{
+    font-size: 80px;
+    font-weight: 700;
+    position: relative;
+}
+#temperature::after{
+    content: "°C";
+    font-size: 18px;
+    font-weight: 400;
+    top: 20px;
+    right: 22%;
+    position: absolute;
+}
+#temp-feel{
+    margin-top: -10px;
+    font-size: 14px;
+}
+#weatherCondition{
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+.content-right{
+    margin-top: 20px;
+}
+.content-right img{
+    width: 70px;
+    height: 70px;
+}
+.content-right > div {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.content-right .text p{
+    margin-bottom: 10px;
+}
