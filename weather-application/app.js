@@ -9,6 +9,7 @@ const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", 
 const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 let cityName = "Dhaka";
+let apiKey = '4141d67a67254dd7fac44aa883b116a8';
 
 window.onload = () => {
     main();
@@ -21,31 +22,21 @@ function main(){
     // Dom References
     const search = document.getElementById("search");
     const searchButton = document.getElementById("searchButton");
-    const temperature = document.getElementById("temperature");
-    const tempFeel = document.getElementById("tempFeel");
-    const weatherCondition = document.getElementById("weatherCondition");
-    const windText = document.getElementById("windText");
-    const windSpeed = document.getElementById("windSpeed");
-    const humidityText = document.getElementById("humidityText");
-    const humidityCondition = document.getElementById("humidityCondition");
-    const cloudText = document.getElementById("cloudText");
-    const cloudCondition = document.getElementById("cloudCondition");
-    console.log(temperature, tempFeel, weatherCondition, windText, windSpeed, humidityText, humidityCondition, cloudText, cloudCondition);
 
     // Event Listener
-    searchButton.addEventListener("click", () => {
-        const value = search.value;
-        console.log(value)
-    })
-    search.addEventListener("keydown", (e) => {
-        if(e.key === "Enter"){
-            console.log("enter");
-        }
-    })
-
+    searchButton.addEventListener("click", () =>  handleSearch(search));
+    search.addEventListener("keydown", (e) => handleEnterButtonForSearch(e,search));
 }
 
 // Event handle
+
+function handleSearch(search){
+    cityName = search.value.trim();
+    getWeatherDate();
+}
+function handleEnterButtonForSearch(e, search){
+    if(e.key === "Enter") handleSearch(search);
+}
 
 //dom function
 
@@ -57,5 +48,38 @@ function timeUpdate(){
     document.getElementById("fullDate").textContent = `${day}, ${date} ${mon}`;
 }
 
+function weatherDate(data){
+    const {main, wind, weather, sys, name, clouds} = data;
+
+    const temp = main.temp;
+    const feel = main.feels_like;
+    const windSpeed = wind.speed;
+    const humidity =  main.humidity;
+    const country = sys.country;
+    const weatherMode = weather[0].description;
+
+    document.getElementById("temperature").textContent = Math.floor(temp);
+    document.getElementById("tempFeel").textContent ="Real Feel" + Math.floor(feel) + "°C";
+    document.getElementById("weatherCondition").textContent =  weatherMode;
+    document.getElementById("windSpeed").textContent = windSpeed + "%";
+    document.getElementById("humidityCondition").textContent = humidity + "%";
+    document.getElementById("cloudCondition").textContent =  clouds.all + "%";
+    document.getElementById("cityName").textContent = name + "," + country;
+}
+
 
 //utilities function
+
+async function getWeatherDate(){
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
+    try{
+        const response = await fetch(url)
+        if(!response.ok) throw new Error(`HTTP error ${response.status}`)
+        const data = await response.json()
+        weatherDate(data)   
+    }
+    catch(err){
+        console.error(err.message);
+        alert("Not Found");
+    }
+}
