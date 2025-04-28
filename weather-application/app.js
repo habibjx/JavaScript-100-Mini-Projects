@@ -7,9 +7,20 @@
 // Global Variables
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const weatherIcon = {
+    "clear sky": "./img/clear-sky.png",
+    "partly cloudy": "./img/partly-cloudy.png",
+    "cloudy": "./img/cloudy.png",
+    "rainy": "./img/rain.png",
+    "haze": "./img/haze.png",
+    "foggy": "./img/foggy.png",
+    "thunderstorm": "./img/thunderstorm.png",
+    "few clouds": "./img/few-clouds-512.png"
+}
 
+
+const apiKey = '4141d67a67254dd7fac44aa883b116a8';
 let cityName = "Dhaka";
-let apiKey = '4141d67a67254dd7fac44aa883b116a8';
 
 window.onload = () => {
     main();
@@ -59,12 +70,18 @@ function weatherDate(data){
     const weatherMode = weather[0].description;
 
     document.getElementById("temperature").textContent = Math.floor(temp);
-    document.getElementById("tempFeel").textContent ="Real Feel" + Math.floor(feel) + "°C";
+    document.getElementById("tempFeel").textContent ="Real Feel " + Math.floor(feel) + " °C";
     document.getElementById("weatherCondition").textContent =  weatherMode;
     document.getElementById("windSpeed").textContent = windSpeed + "%";
     document.getElementById("humidityCondition").textContent = humidity + "%";
     document.getElementById("cloudCondition").textContent =  clouds.all + "%";
     document.getElementById("cityName").textContent = name + "," + country;
+
+    if(weatherIcon[weatherMode]){
+        document.getElementById('weatherImg').src = weatherIcon[weatherMode]
+    }else{
+        document.getElementById('weatherImg').src = weatherIcon['cloudy']
+    }
 }
 
 
