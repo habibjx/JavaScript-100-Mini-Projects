@@ -161,3 +161,24 @@ This project is a great way to practice **JavaScript's Date object**, **DOM mani
    - Responsive design for all screen sizes.
    - Clean and simple user interface.
    - Built using HTML, CSS, and JavaScript only.
+
+
+### 10. Weather Application
+
+
+   ![Weather Application](./weather-application/img/weather-application.png)
+
+   - **Description**  I’ve just built a Weather Application using a weather API!
+   This simple yet functional project allows users to search any city and view real-time weather updates. It was a great opportunity to practice working with APIs and DOM manipulation. I'm constantly improving my skills in JavaScript and frontend development, and this project helped me explore real-world data handling.
+
+   - **Repo**: [Weather Application](https://github.com/habibjx/JavaScript-100-Mini-Projects/tree/main/weather-application)
+   - **Live View**: [Weather Application](https://weather-application-habibjx.netlify.app/)
+
+   **Key Features:**
+   - City search with both Search Icon and Enter key support.
+   - Displays Temperature in Celsius.
+   - Shows "Feels Like" (Real Feel) temperature.
+   - Current Weather Condition (e.g., Clear, Rainy, Cloudy).
+   -  Wind Speed, Humidity, and Cloudiness.
+   - Shows current Date.
+   -  Displays the City Name and Country Code (e.g., Dhaka, BD).
