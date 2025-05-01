@@ -40,3 +40,20 @@ body{
     font-size: 24px;
     cursor: pointer; 
 }
+
+/* chart ================  */
+.calculation-chart {
+    margin: 30px 0;
+    width: 320px;
+    height: 147px;
+    border-radius: 50% / 100% 100% 0 0;
+    background: lightblue;
+}
+.div1{
+    width: 150px;
+    height: 150px;
+    /* background: rgb(126, 226, 199); */
+    border: 50px solid transparent;
+    border-top-color: rgb(211, 232, 126);
+    border-radius: 40% / 100px;
+}
