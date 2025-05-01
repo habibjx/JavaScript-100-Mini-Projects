@@ -18,9 +18,8 @@ body{
     background: #FFFFFF;
     text-align: center;
 }
-.container i{
-    display: block;
-    font-size: 60px;
+.container #emoji{
+    width: 50px;
 }
 .container p{
     text-align: start;
