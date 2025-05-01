@@ -183,3 +183,18 @@ This project is a great way to practice **JavaScript's Date object**, **DOM mani
    - Shows current Date.
    -  Displays the City Name and Country Code (e.g., Dhaka, BD).
 
+
+### 11. Random Joke Generator
+
+
+   ![Joke Generator](./random-joke-generator/img/joke.png)
+
+   - **Description**  Check out my Random Joke Generator! Click the button, get a random joke, and a surprise "haha" emoji! Fun, simple, and a great way to bring some humor to your day. Built while practicing JavaScript!
+
+   - **Repo**: [Joke Generator](https://github.com/habibjx/JavaScript-100-Mini-Projects/tree/main/random-joke-generator)
+   - **Live View**: [Joke Generator](https://random-joke-generator-habibjx.netlify.app/)
+
+   **Key Features:**
+   - Random Joke Generation: Get a new joke each time you click the button.
+   - Surprise "Haha" Emoji: Along with the joke, a random "haha" emoji will pop up to make it more fun!
+   - Simple & Engaging: A user-friendly interface that ensures a delightful experience.
