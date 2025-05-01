@@ -182,3 +182,4 @@ This project is a great way to practice **JavaScript's Date object**, **DOM mani
    -  Wind Speed, Humidity, and Cloudiness.
    - Shows current Date.
    -  Displays the City Name and Country Code (e.g., Dhaka, BD).
+
