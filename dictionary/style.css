@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    list-style: none;
+    text-decoration: none;
+}
+:root{
+    --color-text: #797979;
+    --color-primary: #4A9DFD;
+    --color-section: #ffffff;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    background: #4A9DFD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper{
+    width: 400px;
+    max-width: 50%;
+    padding: 40px 20px;
+    border-radius: 30px;
+    background: var(--color-section);
+}
+.wrapper .search{
+    width: 100%;
+    height: 40px;
+    margin: 20px auto;
+   
+    position: relative;
+}
+.wrapper .search input{
+    width: 100%;
+    height: 100%;
+    padding: 0 35px;
+    font-size: 16px;
+    border-radius: 8px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.14);
+    background: var(--color-section);
+}
+.wrapper .search input:focus{
+    box-shadow: none;
+    border: 2px solid var(--color-primary);
+}
+.wrapper .search input:focus ~ :nth-child(2){
+    color: var(--color-primary);
+}
+.wrapper .search input:focus ~ :last-child{
+    display: block;
+}
+.wrapper .search input::placeholder{
+    color: var(--color-text);
+}
+.wrapper .search i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.wrapper .search :nth-child(2){
+    left: 10px;
+    color: var(--color-text);
+    pointer-events: none;
+    cursor: default;
+}
+.wrapper .search :last-child{
+    right: 10px;
+    color: var(--color-text);
+    cursor: pointer;
+    display: none;
+}
+#StatusDisplay{
+    color: var(--color-text);
+}
+.container{
+    width: 100%;
+    margin-top: 30px;
+    background: #FAFAFA;
+    padding: 15px 10px;
+    border-radius: 16px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.14);
+    display: none;
+}
+.container > :first-child{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container > :first-child i{
+    cursor: pointer;
+}
+.container li{
+    padding: 10px 0 15px 0;
+    border-bottom: 2px solid #D1D1D1;
+}
+.container .word p{
+    font-weight: 700;
+}
+.container p{
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+.container span{
+    color: var(--color-text);
+    font-size: 17px;
+}
+.container > :last-child{
+    border: none;
+    padding: 10px 0 0 0;
+}
+@media screen and (max-width: 650px){
+    .wrapper {
+        max-width: 70%;
+    }
+}
+@media screen and (max-width: 450px){
+    .wrapper {
+        max-width: 90%;
+    }
+}
+@media screen and (max-width: 350px){
+    .wrapper {
+        max-width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
