@@ -215,3 +215,19 @@ This project is a great way to practice **JavaScript's Date object**, **DOM mani
    - **Repo**: [Dictionary](https://github.com/habibjx/JavaScript-100-Mini-Projects/tree/main/dictionary)
    - **Live View**: [Dictionary](https://dictionary-habibjx.netlify.app/)
 
+### 13. QR Code Generator
+
+   ![QR_Code_Generator](./qr-code-generator/img/qr-code-generator.png)
+
+   - **Description** This is a lightweight and user-friendly QR Code Generator tool built for quick and easy use. Just enter any text or URL, click the "Create" button, and instantly generate a QR code that can be scanned or downloaded. No clutter, no delay—just fast results.
+
+   **Key Features:**
+   - Text/URL Input Support – Insert any text, URL, or message in the input field.
+   - Instant QR Code Generation – One-click "Create" button to generate the QR code within seconds.
+   - Live Display – The generated QR code is displayed immediately below for easy access.
+   - QRDownload Option – A dedicated "Save" button lets users download the QR code image directly.
+
+
+   - **Repo**: [QR_Code_Generator](https://github.com/habibjx/JavaScript-100-Mini-Projects/tree/main/qr-code-generator)
+   - **Live View**: [QR_Code_Generator](https://qr-code-generator-habibjx.netlify.app/)
+
