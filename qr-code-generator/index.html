@@ -12,11 +12,11 @@
 <body>
     <div class="container">
         <h2>Enter Your Text Or URL</h2>
-        <input type="text" placeholder="text or URL">
-        <div class="img"><img src="./img/qrcode.png" alt="img"></div>
+        <input id="input" type="text" placeholder="text or URL" autocomplete="off">
+        <div class="img"><img id="img" src="./img/qr-code.png" alt="img"></div>
         <div class="buttons">
-            <button><span>Save</span> <i class='bx bx-download'></i></button>
-            <button>Create</button>
+            <button id="saveQr" ><span>Save</span> <i class='bx bx-download'></i></button>
+            <button id="create">Create</button>
         </div>
     </div>
 </body>
