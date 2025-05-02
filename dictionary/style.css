@@ -50,9 +50,6 @@ body{
 .wrapper .search input:focus ~ :nth-child(2){
     color: var(--color-primary);
 }
-.wrapper .search input:focus ~ :last-child{
-    display: block;
-}
 .wrapper .search input::placeholder{
     color: var(--color-text);
 }
@@ -71,10 +68,15 @@ body{
     right: 10px;
     color: var(--color-text);
     cursor: pointer;
-    display: none;
+    display: block;
 }
-#StatusDisplay{
+#statusDisplay{
     color: var(--color-text);
+}
+#statusDisplay span{
+    color: #000;
+    font-size: 18px;
+    font-weight: 500;
 }
 .container{
     width: 100%;

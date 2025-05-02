@@ -12,31 +12,33 @@
     <div class="wrapper">
         <h1>English Dictionary</h1>
         <div class="search">
-            <input type="text" placeholder="Search Your Word">
+            <input id="input" type="text" placeholder="Search Your Word" >
             <i class="fa-solid fa-magnifying-glass"></i>
-            <i class="fa-solid fa-xmark"></i>
+            <i id="backSpace" class="fa-solid fa-xmark"></i>
         </div>
-        <p id="StatusDisplay">Type a word and press Enter to search its meaning, example, and synonyms.</p>
+        <p id="statusDisplay">Type a word and press Enter to search its meaning, example, and synonyms.</p>
 
         <ul class="container" >
             <li>
                 <div class="word">
-                    <p>Apple</p>
-                    <span></span>     
+                    <p id="word">Apple</p>
+                    <span id="wordDefinition">__</span>     
                 </div>
-                <i class="fa-solid fa-volume-high"></i>
+                <i id="volume" class="fa-solid fa-volume-high"></i>
             </li>
             <li>
                 <p>Meaning</p>
-                <span></span>     
+                <span id="meaning">__</span>     
             </li>
             <li>
                 <p>Example</p>
-                <span></span>    
+                <span id="example">__</span>    
             </li>
             <li>
                 <p>Synonyms</p>
-                <span></span>    
+                <span id="synonyms">
+                   
+            </span>    
             </li>
         </ul>
     </div>
