@@ -67,19 +67,21 @@ function wordDefinition(wordData, container){
     let definitions = wordData.meanings[0].definitions;
     const partOfSpeech = wordData.meanings[0].partOfSpeech
     const phonetic = wordData.phonetics[0].text;
-    audio = new Audio(wordData.phonetics[0].audio);
     const synonyms = wordData.meanings[0].synonyms;
+    audio = new Audio(wordData.phonetics[0].audio);
 
     container.querySelector("#word").textContent = wordData.word;
     container.querySelector("#wordDefinition").textContent = `${partOfSpeech} | ${phonetic}`;
     container.querySelector("#meaning").textContent = definitions[0].definition;
     if(definitions[3]) container.querySelector("#example").textContent = definitions[3].example;
-        
-
+    
     const synonymsContainer = container.querySelector("#synonyms");
     synonymsContainer.innerHTML = "";
-    for(let i = 0; i < 5; i++){
-        synonymsContainer.innerHTML += `<span>${synonyms[i]}</span> | `
+    console.log(synonyms)
+    if(synonyms && synonyms.length > 0){
+        for(let i = 0; i < 5; i++){
+            synonymsContainer.innerHTML += `<span>${synonyms[i]}</span> | `
+        }
     }
 }
 
