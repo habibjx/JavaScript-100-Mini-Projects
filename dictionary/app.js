@@ -37,7 +37,7 @@ async function handleInput(e, input, statusDisplay, container){
             statusDisplay.innerHTML = `Search the meaning of <span> "${word}"</span>`;
             try{
                 const wordData = await getWordFromDictionary(word);
-                wordDefinition(wordData[0], container);
+                wordDefinition(wordData[0], container, statusDisplay);
             }
             catch(err){
                 console.error(err.message)
@@ -61,8 +61,9 @@ function handleAudio(){
 
 // Dom function
 
-function wordDefinition(wordData, container){
+function wordDefinition(wordData, container, statusDisplay){
     container.style.display = "block"
+    statusDisplay.style.display = "none"
 
     let definitions = wordData.meanings[0].definitions;
     const partOfSpeech = wordData.meanings[0].partOfSpeech
@@ -77,13 +78,13 @@ function wordDefinition(wordData, container){
     
     const synonymsContainer = container.querySelector("#synonyms");
     synonymsContainer.innerHTML = "";
-    console.log(synonyms)
     if(synonyms && synonyms.length > 0){
         for(let i = 0; i < 5; i++){
             synonymsContainer.innerHTML += `<span>${synonyms[i]}</span> | `
         }
     }
 }
+
 
 // Utilities function
 
