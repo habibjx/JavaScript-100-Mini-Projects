@@ -5,6 +5,9 @@
 
 // Global variables
 let audio;
+const statusDisplay = document.getElementById("statusDisplay");
+const container = document.querySelector(".container");
+const input = document.getElementById("input");
 
 window.onload = () => {
     main();
@@ -13,41 +16,20 @@ window.onload = () => {
 
 function main(){
     // DOM Reference
-    const input = document.getElementById("input");
+    
     const closeIcon = document.getElementById("closeIcon");
-    const statusDisplay = document.getElementById("statusDisplay");
-
-    const container = document.querySelector(".container");
     const volume = document.getElementById("volume");
 
     //Event Listener
-    input.addEventListener("keydown", e => handleInput(e, input, statusDisplay, container));
+    input.addEventListener("keydown", e => handleInput(e));
     closeIcon.addEventListener("click", () => handleCloseIcon(input));
     volume.addEventListener("click", handleAudio);
 
 }
 
 // Event Handler
-async function handleInput(e, input, statusDisplay, container){
-    if(e.key === "Enter"){
-        const word = input.value.trim();
-        const validWord =  wordValidation(word);
-        
-        if(validWord){
-            statusDisplay.innerHTML = `Search the meaning of <span> "${word}"</span>`;
-            try{
-                const wordData = await getWordFromDictionary(word);
-                wordDefinition(wordData[0], container, statusDisplay);
-            }
-            catch(err){
-                console.error(err.message)
-                statusDisplay.innerHTML = `Can't find the meaning of <span> "${word}"</span>`;
-            }
-        }
-        else{
-            alert("Please Enter valid word");
-        }
-    }
+function handleInput(e){
+    if(e.key === "Enter") searchProcess(input.value.trim());
 }
 
 function handleCloseIcon(input){
@@ -61,7 +43,7 @@ function handleAudio(){
 
 // Dom function
 
-function wordDefinition(wordData, container, statusDisplay){
+function wordDefinition(wordData){
     container.style.display = "block"
     statusDisplay.style.display = "none"
 
@@ -80,11 +62,15 @@ function wordDefinition(wordData, container, statusDisplay){
     synonymsContainer.innerHTML = "";
     if(synonyms && synonyms.length > 0){
         for(let i = 0; i < synonyms.length; i++){
-            if(i < 5) synonymsContainer.innerHTML += `<span>${synonyms[i]}</span> / `;     
+            if(i < 5) synonymsContainer.innerHTML += `<span onclick=findSynonymWord('${synonyms[i]}')>${synonyms[i]}</span> / `;     
         }
     }
 }
 
+function findSynonymWord(word){
+    searchProcess(word);
+    input.value = word;
+}
 
 // Utilities function
 
@@ -103,4 +89,22 @@ async function getWordFromDictionary(word) {
 function wordValidation(word){
     const regex = /^[A-Za-z]+$/;
     return regex.test(word);
+}
+
+async function searchProcess(word){
+    const validWord =  wordValidation(word); 
+    if(validWord){
+        statusDisplay.innerHTML = `Search the meaning of <span> "${word}"</span>`;
+        try{
+            const wordData = await getWordFromDictionary(word);
+            wordDefinition(wordData[0]);
+        }
+        catch(err){
+            console.error(err.message)
+            statusDisplay.innerHTML = `Can't find the meaning of <span> "${word}"</span>`;
+        }
+    }
+    else{
+        alert("Please Enter valid word");
+    }
 }

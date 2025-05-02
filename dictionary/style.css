@@ -115,6 +115,15 @@ body{
     border: none;
     padding: 10px 0 0 0;
 }
+#synonyms{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+#synonyms span{
+    cursor: pointer;
+    text-decoration: underline;
+}
 @media screen and (max-width: 650px){
     .wrapper {
         max-width: 70%;
