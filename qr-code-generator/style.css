@@ -1,0 +1,74 @@
+*{margin: 0; padding: 0;box-sizing: border-box; border: none; outline: none;}
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #EAECF8;
+}
+.container{
+    width: 400px;
+    max-width: 50%;
+    padding: 20px;
+    border-radius: 20px;
+    background: #EAECF8;
+    border: 4px solid #FBFCFE;
+    box-shadow: inset 2px 2px 50px rgba(234, 236, 248, 0.22);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+.container input{
+    width: 100%;
+    font-size: 16px;
+    margin: 20px 0;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: #8766FC;
+    color: #E6E6E6;
+}
+.container .img{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.container input::placeholder{
+    color: #E6E6E6; 
+}
+.container .buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+.buttons button{
+    padding: 8px 20px;
+    font-size: 16px;
+    border-radius: 20px;
+    background: #8766FC;
+    color: #E6E6E6;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+    transition: .2s;
+}
+.buttons button:hover{
+    transform: scale(1.1);
+}
+.buttons :first-child{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.buttons i{
+    font-size: 18px;
+}
+@media screen and (max-width: 500px){
+    .container{
+        max-width: 80%;
+    }
+}
+@media screen and (max-width: 350px){
+    .container{
+        max-width: 90%;
+    }
+}
