@@ -198,3 +198,20 @@ This project is a great way to practice **JavaScript's Date object**, **DOM mani
    - Random Joke Generation: Get a new joke each time you click the button.
    - Surprise "Haha" Emoji: Along with the joke, a random "haha" emoji will pop up to make it more fun!
    - Simple & Engaging: A user-friendly interface that ensures a delightful experience.
+
+
+### 12. English Dictionary
+
+   ![Dictionary](./dictionary/img/dictionary.png)
+
+   - **Description** Introducing a lightweight and interactive dictionary app that helps you learn new English words with just a few clicks. Simply type any word into the input box and hit Enter! If the input is empty, you’ll get a friendly alert reminding you to type something valid. Once a proper word is entered, the app will instantly display all essential word details to boost your vocabulary learning.
+
+   **Key Features:**
+   - Word Validation: Alerts users when no word is entered
+   - Click to Hear Pronunciation
+   - Clean and user-friendly UI
+   - Real-time search response
+
+   - **Repo**: [Dictionary](https://github.com/habibjx/JavaScript-100-Mini-Projects/tree/main/dictionary)
+   - **Live View**: [Dictionary](https://dictionary-habibjx.netlify.app/)
+
