@@ -14,7 +14,7 @@ window.onload = () => {
 function main(){
     // DOM Reference
     const input = document.getElementById("input");
-    const backSpace = document.getElementById("backSpace");
+    const closeIcon = document.getElementById("closeIcon");
     const statusDisplay = document.getElementById("statusDisplay");
 
     const container = document.querySelector(".container");
@@ -22,8 +22,9 @@ function main(){
 
     //Event Listener
     input.addEventListener("keydown", e => handleInput(e, input, statusDisplay, container));
-    backSpace.addEventListener("click", () => input.value = "");
-    volume.addEventListener("click", () => handleAudio(volume));
+    closeIcon.addEventListener("click", () => handleCloseIcon(input));
+    volume.addEventListener("click", handleAudio);
+
 }
 
 // Event Handler
@@ -49,14 +50,18 @@ async function handleInput(e, input, statusDisplay, container){
     }
 }
 
-function handleAudio(volume){
+function handleCloseIcon(input){
+    input.value = "";
+    input.focus();
+}
+
+function handleAudio(){
     audio.play();
 }
 
 // Dom function
 
 function wordDefinition(wordData, container){
-    console.log(wordData)
     container.style.display = "block"
 
     let definitions = wordData.meanings[0].definitions;
@@ -68,7 +73,8 @@ function wordDefinition(wordData, container){
     container.querySelector("#word").textContent = wordData.word;
     container.querySelector("#wordDefinition").textContent = `${partOfSpeech} | ${phonetic}`;
     container.querySelector("#meaning").textContent = definitions[0].definition;
-    container.querySelector("#example").textContent = definitions[3].example;
+    if(definitions[3]) container.querySelector("#example").textContent = definitions[3].example;
+        
 
     const synonymsContainer = container.querySelector("#synonyms");
     synonymsContainer.innerHTML = "";
