@@ -29,7 +29,7 @@ function main() {
 async function handleMovieSearch(){
     const data = await getMovieData(`http://www.omdbapi.com/?s=${movieSearch.value}&apikey=6af6e47a`);
     data.Search.forEach((movie) => {
-        moviesSuggestionContainer(movie);
+        // moviesSuggestionContainer(movie);
     })
 }
 
@@ -52,14 +52,14 @@ function moviesSuggestionContainer(movie){
     h4.className = 'title';
     h4.textContent = Title;
 
-    const description = document.createElement('div');
-    description.className = 'description';
+    // const description = document.createElement('div');
+    // description.className = 'description';
 
-    const spanForYrs = document.createElement('span');
-    spanForYrs.textContent = Year;
+    // const spanForYrs = document.createElement('span');
+    // spanForYrs.textContent = Year;
 
-    description.appendChild(spanForYrs);
-    div.append(h4, description);
+    // description.appendChild(spanForYrs);
+    div.append(h4);
     li.append(img, div);
     moviesSuggestion.appendChild(li);
 }

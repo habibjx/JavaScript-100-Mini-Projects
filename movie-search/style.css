@@ -57,16 +57,16 @@ body{
 }
 .search-container .movie-suggestion{
     width: 100%;
-    padding: 20px;
     margin-top: 20px;
+    padding: 20px;
     max-height: 500px;
     overflow-y: auto;
     position: absolute;
     top: 60px;
     left: 0;
     border-radius: 10px;
-    background: var(--color-bg);
-    display: none;
+    background: #303042;
+    /* display: none; */
     z-index: 10;
 }
 .movie-suggestion::-webkit-scrollbar{
@@ -85,38 +85,23 @@ body{
 }
 .movie-suggestion li{
     width: 100%;
-    height: 80px;
     margin-bottom: 20px;
     border-radius: 5px;
     overflow: hidden;
     display: flex;
     align-items: flex-start;
-    gap: 50px;
+    gap: 30px;
     border-bottom: 1px solid var(--color-border);
     cursor: pointer;
 }
-.movie-suggestion li > div {
-    height: 100%;
-    padding: 6px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.movie-suggestion img{
+    width: 80px;
 }
-
 .movie-suggestion h4{
     font-size: 24px;
 
 }
-.movie-suggestion .description span{
-    display: inline-block;
-    padding: 4px 12px;
-    border-radius: 6px;
-    font-size: 12px;
-    background: var(--color-section);
-}
-
 .result-container{
-    /* border: 1px solid red; */
     width: 70%;
     margin: auto;
     display: flex;
@@ -217,8 +202,23 @@ body{
     }
 }
 @media(max-width: 700px){
+    .wrapper .search-container {
+        width: 80%;
+    }
+    .movie-suggestion img {
+        width: 50px;
+    }
+    .movie-suggestion h4 {
+        font-size: 18px;
+    }
+    .result-container {
+        flex-direction: column;
+    }
     .result-container img {
         width: 250px;
+    }
+    .result-container .movie-img {
+        margin: auto;
     }
     .movie-description h2 {
         font-size: 32px;
@@ -226,25 +226,13 @@ body{
     .movie-description .des1 {
         margin: 15px 0;
     }
+    .movie-description .des4 {
+        padding-bottom: 20px;
+    }
     .movie-description .des4 span {
         padding: 5px 15px;
     }
     .movie-description .plot {
         flex-direction: column;
     }
-}
-@media(max-width: 700px){
-    .wrapper .search-container {
-        width: 80%;
-    }
-    .result-container {
-        flex-direction: column;
-    }
-    .result-container .movie-img {
-        margin: auto;
-    }
-    .movie-description .des4 {
-        padding-bottom: 20px;
-    }
-
 }
