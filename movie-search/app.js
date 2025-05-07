@@ -17,7 +17,7 @@ window.onload = () => {
 
 function main() {
     // DOM Reference 
-    
+    const close = document.getElementById('close');
     
 
     // Event listener 
@@ -27,6 +27,7 @@ function main() {
             moviesSuggestion.style.display = 'none';
         }
     })
+    close.addEventListener('click', handleClose);
 }
 
 // Event Handler 
@@ -35,6 +36,10 @@ async function handleMovieSearch(){
     data.Search.forEach((movie) => {
         moviesSuggestionContainer(movie);
     })
+}
+
+function handleClose(){
+    if(movieSearch !== '') movieSearch.value = '';
 }
 
 
@@ -58,7 +63,6 @@ function moviesSuggestionContainer(movie){
     console.log(Poster)
     img.alt = Title;
 
-    console.log(Year)
     const h4 = document.createElement('h4');
     h4.className = 'title';
     h4.textContent = `${Title} (${Year})`;
