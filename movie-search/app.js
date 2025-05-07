@@ -18,6 +18,7 @@ window.onload = () => {
 function main() {
     // DOM Reference 
     const close = document.getElementById('close');
+    const resultContainer = document.querySelector('.result-container');
     
 
     // Event listener 
@@ -28,6 +29,7 @@ function main() {
         }
     })
     close.addEventListener('click', handleClose);
+    moviesSuggestion.addEventListener('click', (event) => handleMovieSuggestion(event, resultContainer))
 }
 
 // Event Handler 
@@ -41,34 +43,80 @@ async function handleMovieSearch(){
 function handleClose(){
     if(movieSearch !== '') movieSearch.value = '';
 }
+async function handleMovieSuggestion(event, parent){
+    const li = event.target.closest('li');
+    if(li && li.className === 'list-box'){
+        const data = await getMovieData(`http://www.omdbapi.com/?i=${li.dataset.id}&apikey=6af6e47a`)
+        movieDisplayContainer(data, parent);
+    }
+}
 
 
 // DOM Function 
 
 function moviesSuggestionContainer(movie){
 
-    if(movieSearch.value === ""){
-        moviesSuggestion.style.display = "none";
-        console.log('ok')
-    }
-
     moviesSuggestion.style.display = "block";
     const { Poster, Title, Year, imdbID } = movie;
 
     const li = document.createElement('li');
+    li.dataset.id = imdbID;
+    li.className = 'list-box';
 
     const img = document.createElement('img');
 
     img.src = (!Poster || Poster == 'N/A') ? './img/image_not_found.png' : Poster; 
-    console.log(Poster)
     img.alt = Title;
 
     const h4 = document.createElement('h4');
-    h4.className = 'title';
     h4.textContent = `${Title} (${Year})`;
 
     li.append(img, h4);
     moviesSuggestion.appendChild(li);
+}
+
+function movieDisplayContainer(data, parent){
+    console.log(data)
+    const {Actors, Country, Director, Genre, Language, Plot, Poster, Ratings, Released, Runtime, Title, Writer, Year} = data;
+    const ratingValue = Ratings[0].value;
+    parent.innerHTML = `
+
+        <div class="movie-img">
+                <img src="${Poster}" alt="${Title}">
+                <span>${Runtime}</span>
+        </div>
+        <div class="movie-description">
+            <h2>${Title}</h2>
+            <div class="des1">
+                <span>Year${Year}</span>
+                <span>Released${Released}</span>
+                <span>Rating${ratingValue}</span>
+            </div>
+            <div class="des2">
+                <div class="Genre">
+                    <h4>Genre</h4>
+                    <p>${Genre}</p>
+                </div>
+                <div class="actors">
+                    <h4>Actors</h4>
+                    <p>${Actors}</p>
+                </div>
+                <div class="writer">
+                    <h4>Writer</h4>
+                    <p>${Writer}</p>
+                </div>
+            </div>
+            <div class="plot">
+                <h4>Plot:</h4>
+                <p>${Plot}</p>
+            </div>
+            <div class="des4">
+                <span>Country:${Country}</span>
+                <span>Language: ${Language}</span>
+                <span> Director: ${Director}</span>
+            </div>
+        </div>
+    `
 }
 
 // utilities function 
@@ -83,24 +131,3 @@ async function getMovieData(url){
         console.error(err.message);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// async function search() {
-//     const res = await fetch("");
-//     const data = await res.json()
-//     console.log(data)
-// }
-// search()
-
