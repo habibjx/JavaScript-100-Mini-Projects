@@ -22,45 +22,47 @@ function main() {
 
     // Event listener 
     movieSearch.addEventListener("keyup", handleMovieSearch);
-
+    window.addEventListener('click', e => {
+        if(e.target.className != 'movie-suggestion'){
+            moviesSuggestion.style.display = 'none';
+        }
+    })
 }
 
 // Event Handler 
 async function handleMovieSearch(){
     const data = await getMovieData(`http://www.omdbapi.com/?s=${movieSearch.value}&apikey=6af6e47a`);
     data.Search.forEach((movie) => {
-        // moviesSuggestionContainer(movie);
+        moviesSuggestionContainer(movie);
     })
 }
+
 
 // DOM Function 
 
 function moviesSuggestionContainer(movie){
+
+    if(movieSearch.value === ""){
+        moviesSuggestion.style.display = "none";
+        console.log('ok')
+    }
+
     moviesSuggestion.style.display = "block";
     const { Poster, Title, Year, imdbID } = movie;
-    console.log(Poster, Title, Year, imdbID)
 
     const li = document.createElement('li');
 
     const img = document.createElement('img');
-    img.src = Poster; 
+    img.src = Poster || "./img/image_not_found.png"; 
+    console.log(Poster)
     img.alt = Title;
 
-    const div = document.createElement('div');
-
+    console.log(Year)
     const h4 = document.createElement('h4');
     h4.className = 'title';
-    h4.textContent = Title;
+    h4.textContent = `${Title} (${Year})`;
 
-    // const description = document.createElement('div');
-    // description.className = 'description';
-
-    // const spanForYrs = document.createElement('span');
-    // spanForYrs.textContent = Year;
-
-    // description.appendChild(spanForYrs);
-    div.append(h4);
-    li.append(img, div);
+    li.append(img, h4);
     moviesSuggestion.appendChild(li);
 }
 
