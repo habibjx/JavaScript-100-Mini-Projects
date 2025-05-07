@@ -53,7 +53,8 @@ function moviesSuggestionContainer(movie){
     const li = document.createElement('li');
 
     const img = document.createElement('img');
-    img.src = Poster || "./img/image_not_found.png"; 
+
+    img.src = (!Poster || Poster == 'N/A') ? './img/image_not_found.png' : Poster; 
     console.log(Poster)
     img.alt = Title;
 
