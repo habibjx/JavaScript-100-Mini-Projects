@@ -23,11 +23,7 @@ function main() {
 
     // Event listener 
     movieSearch.addEventListener("keyup", handleMovieSearch);
-    window.addEventListener('click', e => {
-        if(e.target.className != 'movie-suggestion'){
-            moviesSuggestion.style.display = 'none';
-        }
-    })
+    window.addEventListener('click', (e) => handleListItemsClose(e));
     close.addEventListener('click', handleClose);
     moviesSuggestion.addEventListener('click', (event) => handleMovieSuggestion(event, resultContainer))
 }
@@ -42,12 +38,20 @@ async function handleMovieSearch(){
 
 function handleClose(){
     if(movieSearch !== '') movieSearch.value = '';
+    moviesSuggestion.innerHTML = "";
 }
 async function handleMovieSuggestion(event, parent){
     const li = event.target.closest('li');
     if(li && li.className === 'list-box'){
         const data = await getMovieData(`http://www.omdbapi.com/?i=${li.dataset.id}&apikey=6af6e47a`)
         movieDisplayContainer(data, parent);
+    }
+}
+
+function handleListItemsClose(e) {
+    if(e.target.className != 'movie-suggestion'){
+        moviesSuggestion.style.display = 'none';
+        moviesSuggestion.innerHTML = "";
     }
 }
 
