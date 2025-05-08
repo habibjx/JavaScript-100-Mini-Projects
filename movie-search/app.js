@@ -81,12 +81,14 @@ function moviesSuggestionContainer(movie){
 }
 
 function movieDisplayContainer(data, parent){
+    console.log(data)
     const {Actors, Country, Director, Genre, Language, Plot, Poster, Ratings, Released, Runtime, Title, Writer, Year} = data;
     const ratingValue = Ratings[0].value;
+    const img = (!Poster || Poster == 'N/A') ? './img/image_not_found.png' : Poster;
     parent.innerHTML = `
 
         <div class="movie-img">
-                <img src="${Poster}" alt="${Title}">
+                <img src="${img}" alt="${Title}">
                 <span>${Runtime}</span>
         </div>
         <div class="movie-description">
