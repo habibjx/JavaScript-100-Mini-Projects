@@ -92,9 +92,9 @@ function movieDisplayContainer(data, parent){
         <div class="movie-description">
             <h2>${Title}</h2>
             <div class="des1">
-                <span>Year${Year}</span>
-                <span>Released${Released}</span>
-                <span>Rating${ratingValue}</span>
+                <span>Year: ${Year}</span>
+                <span>Released: ${Released}</span>
+                <span>Rating: ${ratingValue}</span>
             </div>
             <div class="des2">
                 <div class="Genre">
@@ -115,7 +115,7 @@ function movieDisplayContainer(data, parent){
                 <p>${Plot}</p>
             </div>
             <div class="des4">
-                <span>Country:${Country}</span>
+                <span>Country: ${Country}</span>
                 <span>Language: ${Language}</span>
                 <span> Director: ${Director}</span>
             </div>
