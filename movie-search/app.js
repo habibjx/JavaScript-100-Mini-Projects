@@ -30,6 +30,7 @@ function main() {
 
 // Event Handler 
 async function handleMovieSearch(){
+    moviesSuggestion.innerHTML = '';
     const data = await getMovieData(`http://www.omdbapi.com/?s=${movieSearch.value}&apikey=6af6e47a`);
     data.Search.forEach((movie) => {
         moviesSuggestionContainer(movie);
@@ -80,7 +81,6 @@ function moviesSuggestionContainer(movie){
 }
 
 function movieDisplayContainer(data, parent){
-    console.log(data)
     const {Actors, Country, Director, Genre, Language, Plot, Poster, Ratings, Released, Runtime, Title, Writer, Year} = data;
     const ratingValue = Ratings[0].value;
     parent.innerHTML = `
